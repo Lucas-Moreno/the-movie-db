@@ -6,7 +6,7 @@ const MovieDetails = (routerProps) => {
     <div>
       <h1>Page Movie details</h1>
       {console.log(routerProps)}
-      <p>{id}</p>
+      <p>id : {id}</p>
     </div>
   )
 }
