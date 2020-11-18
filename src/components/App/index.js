@@ -1,7 +1,6 @@
 // == Import npm
 import React, { useState } from 'react'
 import axios from 'axios'
-import { Button } from 'semantic-ui-react'
 
 // == Import
 import ListResults from '../ListResults'
@@ -14,8 +13,6 @@ const App = () => {
   const [newSearchValue, setNewSearchValue] = useState('')
   const [posts, setPosts] = useState([])
   const [loading, setLoading] = useState(false)
-  const [nextUrl, setNextUrl] = useState('')
-  const [postId, setPostId] = useState()
   const [message, setMessage] = useState('Welcome, young padawan.')
   const [hasError, setHasError] = useState(false)
   const [messageVisible, setMessageVisible] = useState(true)
@@ -41,25 +38,11 @@ const App = () => {
       const url = `https://api.themoviedb.org/3/search/movie?api_key=325e4a633b85a4ad0f68aa6594634b88&query=${newSearchValue}`
       let responseItems = await axios.get(url)
       console.log(responseItems.data)
-      //setNextUrl(responseItems.data.next)
       responseItems.data.results.forEach(element => {
         element.id = id++
       })
-      //setPostId(id)
       setPosts(responseItems.data.results)
       displayMessage('Request successfully completed.')
-      /*} else if (slashCounter(newSearchValue) === 2) {
-        // Si la requête échoue, nous passons dans le "catch" avant la redirection.
-        await axios.get(url)
-        window.location = newSearchValue
-      } else {
-        throw  Object.assign(
-          new Error('Incorret user input'),
-          { response: 
-            { status: 400 }
-          }
-       )
-      }*/
     } catch(error) {
       console.error(error)
       setHasError(true)
@@ -71,24 +54,6 @@ const App = () => {
         displayMessage(`${error.message}. Please, retry later.`)
     } finally {
       setLoading(false)
-    }
-  }
-
-  // Charge de nouveaux éléments.
-  const nextPage = async () => {
-    try {
-      let id = postId
-      let responseItems = await axios.get(nextUrl)
-      setNextUrl(responseItems.data.next)
-      responseItems.data.results.forEach(element => {
-        element.id = id++
-      })
-      setPostId(id)
-      setPosts(prevState => [...prevState, ...responseItems.data.results])
-    } catch(error) {
-      console.error(error)
-      displayMessage(error.message)
-      setHasError(true)
     }
   }
 
@@ -108,11 +73,6 @@ const App = () => {
         />
       )}
       <ListResults items={posts} />
-      {nextUrl && (
-        <div id='button-container'>
-          <Button onClick={nextPage}>Load More</Button>
-        </div>
-      )}
     </div>
   )
 }
