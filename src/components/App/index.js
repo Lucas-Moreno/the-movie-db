@@ -17,7 +17,7 @@ const App = () => {
   const [hasError, setHasError] = useState(false)
   const [messageVisible, setMessageVisible] = useState(true)
 
-  const BACK_URL = process.env.REACT_APP_BACK_URL
+  const API_KEY = process.env.REACT_APP_API_KEY
 
   const displayMessage = (messageToDisplay) => {
     setMessageVisible(true)
@@ -72,7 +72,9 @@ const App = () => {
           setMessageVisible={setMessageVisible}
         />
       )}
-      <ListResults items={posts} />
+      {newSearchValue && (
+        <ListResults items={posts} />
+      )}
     </div>
   )
 }
