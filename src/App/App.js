@@ -12,7 +12,7 @@ const App = () => {
       <Switch>
         <Redirect exact path="/" to="/movie"></Redirect>
         <Route exact path="/movie" component={Movie}></Route>
-        <Route path="/movie/:id" render={routerProps => MovieDetails(routerProps)}></Route>
+        <Route path="/movie/:id" component={routerProps => MovieDetails(routerProps)}></Route>
         <Route component={NotFound}></Route>
       </Switch>
     </BrowserRouter>
