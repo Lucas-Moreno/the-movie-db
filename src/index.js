@@ -15,7 +15,7 @@ ReactDOM.render(
     <Header />
     <Router>
       <Route path='/card/' component={Card} />
-      <Route exact path='/' component={App}/>
+      <Route exact path='/' component={App} />
     </Router>
   </React.StrictMode>,
   document.getElementById('root')

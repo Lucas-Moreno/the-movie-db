@@ -3,10 +3,10 @@ import { Card } from 'semantic-ui-react'
 import PropTypes from 'prop-types'
 
 // La clé qui contient le nom d'un film est "title", et pas "name", le ternaire sert ici de filtre.
-const Item = ({ name, title, url }) => (
+const Item = ({ title, url }) => (
   <Card onClick={() => window.location = url}>
     <Card.Content>
-      <Card.Header>{name ? name : title}</Card.Header>
+      <Card.Header>{title}</Card.Header>
     </Card.Content>
   </Card>
 )
