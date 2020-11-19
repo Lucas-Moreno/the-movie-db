@@ -1,0 +1,139 @@
+$desktop-break: 620px;
+
+body {
+  padding: 0 28px;
+  font-size: 16px;
+  line-height: 1.4;
+
+  @media (max-width: $desktop-break) {
+    font-size: 14px;
+  }
+}
+
+main {
+  margin: 40px auto;
+  max-width: 1000px;
+
+  @media (max-width: $desktop-break) {
+    max-width: 480px;
+  }
+}
+
+.link {
+  display: flex;
+  align-items: center;
+}
+
+.arrow-icon {
+  margin-right: 2ch;
+  height: 24px;
+
+  @media (max-width: $desktop-break) {
+    height: 16px;
+  }
+}
+
+.link-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #f5f6f6;
+
+  @media (max-width: $desktop-break) {
+    font-size: 16px;
+  }
+}
+
+a {
+  color: #f5f6f6;
+  text-decoration: none;
+}
+
+.results-number {
+  margin-top: 40px;
+
+  @media (max-width: $desktop-break) {
+    margin-top: 28px;
+  }
+}
+
+.movies-container {
+  display: grid;
+  grid-auto-rows: auto;
+  grid-template-columns: repeat(auto-fill, 1fr);
+  row-gap: 40px;
+  margin: 20px 0;
+}
+
+.movie-container {
+  display: flex;
+}
+
+.movie-description-container {
+  margin: 16px 0 0 24px;
+}
+
+.movie-picture {
+  width: 200px;
+  height: 280px;
+  object-fit: cover;
+
+  @media (max-width: $desktop-break) {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+.movie-title {
+  max-width: calc(100vw - 164px);
+  font-size: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  @media (max-width: $desktop-break) {
+    font-size: 16px;
+  }
+}
+
+.movie-score-container {
+  display: flex;
+  align-items: center;
+  margin-top: 16px;
+
+  @media (max-width: $desktop-break) {
+    margin-top: 8px;
+  }
+}
+
+.star-icon {
+  margin: -2px 8px 0;
+  height: 14px;
+}
+
+.movie-synopsis-container {
+  margin-top: 28px;
+  
+  @media (max-width: $desktop-break) {
+    display: none;
+  }
+}
+
+.movie-synopsis-title {
+  font-size: 20px;
+}
+
+.movie-synopsis-text {
+  position: relative;
+  margin-top: 2ch;
+  max-height: calc(1.4rem * 3.1);
+  overflow: hidden;
+}
+
+.movie-release-date {
+  margin-top: 2ch;
+  font-style: italic;
+}
+
+.button {
+  padding: 4px 8px;
+}

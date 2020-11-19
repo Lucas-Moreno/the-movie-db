@@ -1,0 +1,13 @@
+.searchbar {
+  &--input {
+    border: 1px solid $primary-blue;
+    border-radius: 20px;
+    background-image: url('../../../assets/icons/loupe.svg');
+    background-repeat: no-repeat;
+    padding-left: 20px;
+    padding: 4px;
+    &:focus {
+      outline: none;
+    }
+  }
+}
