@@ -33,7 +33,7 @@ const Movie = () => {
         <div className='home__sliderContainer'>
           <span>
             <p className='home__sliderContainer--title'>Séries les mieux notées</p>
-            <Link to="/" className='home__sliderContainer--viewAll'>Tout voir</Link>
+            <Link to="/series/top_rated" className='home__sliderContainer--viewAll'>Tout voir</Link>
           </span>
           <MostViewedTvShows />
         </div>
