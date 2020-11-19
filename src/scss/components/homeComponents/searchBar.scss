@@ -13,4 +13,10 @@
   &--searchbar {
     z-index: 10000;
   }
+  &--yo {
+    z-index: 10;
+    position: absolute;
+    background-color: $dark-background;
+    width: 100%;
+  }
 }
