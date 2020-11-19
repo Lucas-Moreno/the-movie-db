@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../../scss/style.scss';
 
-const ImageSlider = ({ bestMovies }) => {
+const Slider = ({ bestMovies }) => {
   const [index, setIndex] = useState(0);
 
   const slideRight = () => {
@@ -22,11 +22,11 @@ const ImageSlider = ({ bestMovies }) => {
       <div className='container'>
         <button onClick={slideLeft}>{'<'}</button>
         <div className='container__slider'>
-          {bestMovies.slice(index, index + 4).map((item) => (
-            <div key={item.id} {...item} className='container__slider--card'>
+          {bestMovies.slice(index, index + 4).map((bestMovie) => (
+            <div key={bestMovie.id} {...bestMovie} className='container__slider--card'>
               <img src='' alt='Image' />
-              <h1 className='container__slider--card--title'>{item.title}</h1>
-              <p className='container__slider--card--date'>{item.release_date}</p>
+              <h1 className='container__slider--card--title'>{bestMovie.title}</h1>
+              <p className='container__slider--card--date'>{bestMovie.release_date}</p>
             </div>
           ))}
         </div>
@@ -49,4 +49,4 @@ const ImageSlider = ({ bestMovies }) => {
   );
 };
 
-export default ImageSlider;
+export default Slider;
