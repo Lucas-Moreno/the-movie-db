@@ -1,0 +1,21 @@
+* {
+  box-sizing: border-box;
+}
+
+#root {
+  height: 100vh;
+}
+
+body {
+  background-color: $dark-background;
+  color: $white;
+  font-family: 'Poppins', sans-serif;
+  @include smartphone {
+    padding-left: 19px;
+    padding-right: 19px;
+  }
+  @include pc {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+}
