@@ -10,8 +10,8 @@ const AllKinds = () => {
   let id = 6
 
   return (
-    <div>
-      <p className="title_carousel">Tout les genres :</p>
+    <div className="kind">
+      <p className="title_carousel">Tout les genres</p>
       <div className="container__carousel">
         <Slider dots slidesPerRow={id}>
           <Link to="/movie/film/Action">

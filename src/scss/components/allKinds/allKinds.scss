@@ -1,3 +1,7 @@
+
+.kind{
+  margin:0vw 4vw;
+}
 .container__carousel{
   display: flex;
   justify-content: center;
@@ -22,5 +26,13 @@
 }
 .title_carousel{
   margin-top: 6vh;
-  margin-bottom:3vh;
+  padding-bottom: 5vh;
+  font-size: 22px;
+  font-weight: 300;
+}
+
+@media screen and (max-width: 640px) {
+  .title_carousel {
+    font-size: 12px;
+  }
 }
