@@ -10,4 +10,7 @@
       outline: none;
     }
   }
+  &--searchbar {
+    z-index: 10000;
+  }
 }

@@ -9,7 +9,6 @@ import '../scss/style.scss';
 const Movie = () => {
   return (
     <div className='home'>
-      <h1>Home page</h1>
       <h1>Qu’allez vous visionner aujourd’hui?</h1>
       <h2>Search Bar</h2>
       <SearchBar />
