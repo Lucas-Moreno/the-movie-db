@@ -14,7 +14,6 @@ const MostViewedThread = () => {
       .then((res) => {
         const mostViewedThreadResults = res.data.results;
         setMostViewedThread(mostViewedThreadResults);
-        console.log(mostViewedThreadResults);
       })
       .catch((err) => console.log(err));
   }, [API_KEY]);

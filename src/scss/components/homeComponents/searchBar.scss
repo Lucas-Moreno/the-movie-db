@@ -8,6 +8,13 @@
     padding: 4px;
     &:focus {
       outline: none;
+      background-image: none;
     }
+  }
+  &--yo {
+    z-index: 10;
+    position: absolute;
+    background-color: $dark-background;
+    width: 100%;
   }
 }

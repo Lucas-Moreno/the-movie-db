@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import '../../scss/style.scss';
 
 const Slider = ({ resultsOfRequest }) => {
@@ -39,15 +40,17 @@ const Slider = ({ resultsOfRequest }) => {
         </button>
         <div className='container__slider'>
           {resultsOfRequest.slice(index, index + 4).map((result) => (
-            <div key={result.id} className='container__slider--card'>
-              <img
-                src={img + result.poster_path}
-                alt='Image'
-                className='container__slider--card--image'
-              />
-              <h1 className='container__slider--card--title'>{result.title}</h1>
-              <p className='container__slider--card--date'>{result.release_date}</p>
-            </div>
+            <Link to={'/movie/' + result.id} key={result.id}>
+              <div key={result.id} className='container__slider--card'>
+                <img
+                  src={img + result.poster_path}
+                  alt='Image'
+                  className='container__slider--card--image'
+                />
+                <h1 className='container__slider--card--title'>{result.title}</h1>
+                <p className='container__slider--card--date'>{result.release_date}</p>
+              </div>
+            </Link>
           ))}
         </div>
         <button onClick={slideRight}>

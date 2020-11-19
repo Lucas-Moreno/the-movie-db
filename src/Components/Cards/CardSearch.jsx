@@ -1,15 +1,18 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import '../../scss/style.scss';
 
-const CardSearch = ({ x }) => {
+const CardSearch = ({ result }) => {
   const img = `https://image.tmdb.org/t/p/w500`;
 
-  return x.slice(0, 4).map((item) => (
-    <div className='cardSearch'>
-      <img src={img + item.poster_path} alt='' />
-      <h1>{item.title}</h1>
-    </div>
+  return result.slice(0, 4).map((item) => (
+    <Link to={'/movie/' + item.id} key={item.id}>
+      <li className='cardSearch'>
+        <img src={img + item.poster_path} alt='' />
+        <h1>{item.title}</h1>
+      </li>
+    </Link>
   ));
 };
 export default CardSearch;
