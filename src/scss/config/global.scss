@@ -2,12 +2,17 @@
   box-sizing: border-box;
 }
 
+#root {
+  height: 100vh;
+}
+
 body {
-  background-color: $white;
-  // font-family: "Oswald";
+  background-color: $dark-background;
+  color: $white;
+  font-family: 'Poppins', sans-serif;
   @include smartphone {
-    padding-left: 16px;
-    padding-right: 16px;
+    padding-left: 19px;
+    padding-right: 19px;
   }
   @include pc {
     padding-left: 80px;
