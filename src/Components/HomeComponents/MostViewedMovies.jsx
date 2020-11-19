@@ -16,7 +16,7 @@ const BestMovies = () => {
         setPersons(bestMoviesResults);
       })
       .catch((err) => console.log(err));
-  }, []);
+  }, [API_KEY]);
 
   return (
     <div className='bestmovies'>

@@ -22,7 +22,7 @@ const SearchBar = () => {
         setSearchResults(mostViewedThreadResults);
       })
       .catch((err) => console.log(err));
-  }, []);
+  }, [API_KEY]);
 
   return (
     <div className='searchbar'>
