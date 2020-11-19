@@ -1,0 +1,17 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $white;
+  // font-family: "Oswald";
+  @include smartphone {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  @include pc {
+    color: $black;
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+}

@@ -1,6 +1,6 @@
 import React from 'react';
-import '../css/style.css';
-import './App.css';
+import '../scss/style.scss';
+import './App.scss';
 import HomePage from '../Components/HomePage.jsx';
 import MovieDetails from '../Components/MovieDetails/MovieDetails.jsx';
 import NotFound from '../Components/NotFound/NotFound.jsx';

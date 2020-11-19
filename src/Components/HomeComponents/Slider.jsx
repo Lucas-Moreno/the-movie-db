@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../../css/bestMovies.css';
+import '../../scss/bestMovies.scss';
 
 const ImageSlider = ({ bestMovies }) => {
   const [index, setIndex] = useState(0);
@@ -19,27 +19,11 @@ const ImageSlider = ({ bestMovies }) => {
 
   return (
     bestMovies.length > 0 && (
-      <div className='slider'>
+      <div className='container'>
         <button onClick={slideLeft}>{'<'}</button>
-        {/* <div className='yo'>
-          <p key={index}>{bestMovies[index].title}</p>
-          <p>{bestMovies[index].release_date}</p>
-        </div>
-        <div className='yo'>
-          <p key={index + 1}>{bestMovies[index + 1].title}</p>
-          <p>{bestMovies[index].release_date}</p>
-        </div>
-        <div className='yo'>
-          <p key={index + 2}>{bestMovies[index + 2].title}</p>
-          <p>{bestMovies[index].release_date}</p>
-        </div>
-        <div className='yo'>
-          <p key={index + 3}>{bestMovies[index + 3].title}</p>
-          <p>{bestMovies[index].release_date}</p>
-        </div> */}
-        <div className='slider'>
-          {bestMovies.slice(index, index + 3).map((item) => (
-            <div key={item.id} {...item} className='yo'>
+        <div className='container__slider'>
+          {bestMovies.slice(index, index + 4).map((item) => (
+            <div key={item.id} {...item} className='container__slider--card'>
               <h1>{item.title}</h1>
               <p>{item.release_date}</p>
             </div>
