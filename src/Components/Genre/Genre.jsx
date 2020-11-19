@@ -1,260 +1,96 @@
+import { useState, useEffect } from 'react';
+import { useHistory, Link } from 'react-router-dom';
 import React from 'react';
-import useMovieByGenre from '../../hooks/useMovieByGenre';
-import { Link } from 'react-router-dom';
+import axios from 'axios';
 
-const FilmAction = (routerFilm) => {
-  const genreAction = useMovieByGenre(28);
-  const genreThriller = useMovieByGenre(53);
-  const genreRomance = useMovieByGenre(10749);
-  const genreAdventure = useMovieByGenre(12);
-  const genreAnimation = useMovieByGenre(16);
-  const genreComedy = useMovieByGenre(35);
-  const genreCrime = useMovieByGenre(80);
-  const genreDocumentary = useMovieByGenre(99);
-  const genreDrama = useMovieByGenre(18);
-  const genreFamily = useMovieByGenre(10751);
-  const genreFantasy = useMovieByGenre(14);
-  const genreHistory = useMovieByGenre(36);
-  const genreMusic = useMovieByGenre(16);
-  const genreMystery = useMovieByGenre(9648);
-  const genreScienceFiction = useMovieByGenre(878);
-  const genreTVMovie = useMovieByGenre(10770);
-  const genreHorror = useMovieByGenre(27);
-  const genreGuerre = useMovieByGenre(10752);
-  const genreWestern = useMovieByGenre(37);
+import './Genre.scoped.scss'
 
-  const margin = {
-    marginBottom: '3vh',
-    marginTop: '3vh',
-  };
-  const cards = {
-    display: 'flex',
-    flexDirection: 'column',
-  };
+const Genre = ({ match }) => {
+  const [movies, setGenre] = useState([]);
+  const APIKEY = process.env.REACT_APP_APIKEY;
+  let history = useHistory();
+  const genreId = match.params.genreId;
+  const genreName = match.params.genreName;
+  const allGenres = [
+    { id: "28", name: "Action" },
+    { id: "53", name: "Thriller" },
+    { id: "10749", name: "Romance" },
+    { id: "12", name: "Aventure" },
+    { id: "16", name: "Animation" },
+    { id: "35", name: "Comedie" },
+    { id: "80", name: "Crime" },
+    { id: "99", name: "Documentaire" },
+    { id: "18", name: "Drama" },
+    { id: "10751", name: "Famille" },
+    { id: "14", name: "Fantaisie" },
+    { id: "16", name: "Histoire" },
+    { id: "16", name: "Musique" },
+    { id: "9648", name: "Mystere" },
+    { id: "878", name: "ScienceFiction" },
+    { id: "10770", name: "TvMovie" },
+    { id: "27", name: "Horreur" },
+    { id: "10752", name: "Guerre" },
+    { id: "37", name: "Western" },
+  ];
 
-  const card = {
-    marginRight: '1vw',
-    border: '1px solid gray',
-  };
+  let genreExists = false;
 
-  const img = `https://image.tmdb.org/t/p/w500`;
+  for (let i in allGenres) {
+    if (allGenres[i].id === genreId && allGenres[i].name === genreName) genreExists = true;
+  }
+
+  if (!genreExists) history.push('/NotFound');
+
+  useEffect(() => {
+    axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${APIKEY}&with_genres=${genreId}`)
+      .then(res => {
+        const movies = res.data.results;
+        movies.forEach(movie => {
+          movie.release_date = formatDate(movie.release_date);
+        })
+        setGenre(movies);
+      })
+      .catch(err => console.log(err));
+  }, [genreId, APIKEY]);
+
+  const formatDate = (input) => {
+    const datePart = input.match(/\d+/g);
+    const day = datePart[2];
+    const month = datePart[1];
+    const year = datePart[0];
+
+    return `${day}/${month}/${year}`;
+  }
+
   return (
-    <div>
-      <Link to="/movie">
-        <button>Retourner à la home</button>
+    <main>
+      <Link to="/" className="link">
+        <svg className="arrow-icon" viewBox="0 0 6.9 13"><path fill="#f5f6f6" d="M.3 7.2l5.1 5.5a.85.85 0 0 0 1.3 0c.4-.4.4-1 0-1.4L2.2 6.5l4.4-4.8c.4-.4.4-1 0-1.4C6.5.1 6.2 0 6 0a1.08 1.08 0 0 0-.7.3l-5 5.5c-.4.4-.4 1 0 1.4z" /></svg>
+        <h1 className="link-title">{genreName}</h1>
       </Link>
-      <h1 style={margin}> Tout les films {routerFilm.match.params.genre} :</h1>
-      {routerFilm.match.params.genre === 'Action' && (
-        <div style={cards}>
-          {genreAction.map((genre) => (
-            <p style={card}>
-              <img src={img + `${genre.poster_path}`} alt='Action' />
-              <div>Titre du film : {genre.original_title}</div>
-              <div>Date de Sortie : {genre.release_date}</div>
-            </p>
-          ))}
-        </div>
-      )}
-      {routerFilm.match.params.genre === 'Horreur' && (
-        <div style={cards}>
-          {genreThriller.map((genre) => (
-            <p style={card}>
-              <img src={img + `${genre.poster_path}`} alt='Horreur' />
-              <div>Titre du film : {genre.original_title}</div>
-              <div>Date de Sortie : {genre.release_date}</div>
-            </p>
-          ))}
-        </div>
-      )}
-      {routerFilm.match.params.genre === 'Romance' && (
-        <div style={cards}>
-          {genreRomance.map((genre) => (
-            <p style={card}>
-              <img src={img + `${genre.poster_path}`} alt='Romance' />
-              <div>Titre du film : {genre.original_title}</div>
-              <div>Date de Sortie : {genre.release_date}</div>
-            </p>
-          ))}
-        </div>
-      )}
-      {routerFilm.match.params.genre === 'Aventure' && (
-        <div style={cards}>
-          {genreAdventure.map((genre) => (
-            <p style={card}>
-              <img src={img + `${genre.poster_path}`} alt='Adventure' />
-              <div>Titre du film : {genre.original_title}</div>
-              <div>Date de Sortie : {genre.release_date}</div>
-            </p>
-          ))}
-        </div>
-      )}
-      {routerFilm.match.params.genre === 'Animation' && (
-        <div style={cards}>
-          {genreAnimation.map((genre) => (
-            <p style={card}>
-              <img src={img + `${genre.poster_path}`} alt='Animation' />
-              <div>Titre du film : {genre.original_title}</div>
-              <div>Date de Sortie : {genre.release_date}</div>
-            </p>
-          ))}
-        </div>
-      )}
-      {routerFilm.match.params.genre === 'Comedie' && (
-        <div style={cards}>
-          {genreComedy.map((genre) => (
-            <p style={card}>
-              <img src={img + `${genre.poster_path}`} alt='Comedy' />
-              <div>Titre du film : {genre.original_title}</div>
-              <div>Date de Sortie : {genre.release_date}</div>
-            </p>
-          ))}
-        </div>
-      )}
-      {routerFilm.match.params.genre === 'Crime' && (
-        <div style={cards}>
-          {genreCrime.map((genre) => (
-            <p style={card}>
-              <img src={img + `${genre.poster_path}`} alt='Crime' />
-              <div>Titre du film : {genre.original_title}</div>
-              <div>Date de Sortie : {genre.release_date}</div>
-            </p>
-          ))}
-        </div>
-      )}
-      {routerFilm.match.params.genre === 'Documentaire' && (
-        <div style={cards}>
-          {genreDocumentary.map((genre) => (
-            <p style={card}>
-              <img src={img + `${genre.poster_path}`} alt='Documentaire' />
-              <div>Titre du film : {genre.original_title}</div>
-              <div>Date de Sortie : {genre.release_date}</div>
-            </p>
-          ))}
-        </div>
-      )}
-      {routerFilm.match.params.genre === 'Drama' && (
-        <div style={cards}>
-          {genreDrama.map((genre) => (
-            <p style={card}>
-              <img src={img + `${genre.poster_path}`} alt='Drama' />
-              <div>Titre du film : {genre.original_title}</div>
-              <div>Date de Sortie : {genre.release_date}</div>
-            </p>
-          ))}
-        </div>
-      )}
-      {routerFilm.match.params.genre === 'Famille' && (
-        <div style={cards}>
-          {genreFamily.map((genre) => (
-            <p style={card}>
-              <img src={img + `${genre.poster_path}`} alt='Famille' />
-              <div>Titre du film : {genre.original_title}</div>
-              <div>Date de Sortie : {genre.release_date}</div>
-            </p>
-          ))}
-        </div>
-      )}
-      {routerFilm.match.params.genre === 'Fantaisie' && (
-        <div style={cards}>
-          {genreFantasy.map((genre) => (
-            <p style={card}>
-              <img src={img + `${genre.poster_path}`} alt='Fantaisie' />
-              <div>Titre du film : {genre.original_title}</div>
-              <div>Date de Sortie : {genre.release_date}</div>
-            </p>
-          ))}
-        </div>
-      )}
-      {routerFilm.match.params.genre === 'Histoire' && (
-        <div style={cards}>
-          {genreHistory.map((genre) => (
-            <p style={card}>
-              <img src={img + `${genre.poster_path}`} alt='Histoire' />
-              <div>Titre du film : {genre.original_title}</div>
-              <div>Date de Sortie : {genre.release_date}</div>
-            </p>
-          ))}
-        </div>
-      )}
-      {routerFilm.match.params.genre === 'Musique' && (
-        <div style={cards}>
-          {genreMusic.map((genre) => (
-            <p style={card}>
-              <img src={img + `${genre.poster_path}`} alt='Musique' />
-              <div>Titre du film : {genre.original_title}</div>
-              <div>Date de Sortie : {genre.release_date}</div>
-            </p>
-          ))}
-        </div>
-      )}
-      {routerFilm.match.params.genre === 'Mystere' && (
-        <div style={cards}>
-          {genreMystery.map((genre) => (
-            <p style={card}>
-              <img src={img + `${genre.poster_path}`} alt='Mystere' />
-              <div>Titre du film : {genre.original_title}</div>
-              <div>Date de Sortie : {genre.release_date}</div>
-            </p>
-          ))}
-        </div>
-      )}
-      {routerFilm.match.params.genre === 'ScienceFiction' && (
-        <div style={cards}>
-          {genreScienceFiction.map((genre) => (
-            <p style={card}>
-              <img src={img + `${genre.poster_path}`} alt='ScienceFiction' />
-              <div>Titre du film : {genre.original_title}</div>
-              <div>Date de Sortie : {genre.release_date}</div>
-            </p>
-          ))}
-        </div>
-      )}
-      {routerFilm.match.params.genre === 'TvMovie' && (
-        <div style={cards}>
-          {genreTVMovie.map((genre) => (
-            <p style={card}>
-              <img src={img + `${genre.poster_path}`} alt='TvMovie' />
-              <div>Titre du film : {genre.original_title}</div>
-              <div>Date de Sortie : {genre.release_date}</div>
-            </p>
-          ))}
-        </div>
-      )}
-      {routerFilm.match.params.genre === 'Thriller' && (
-        <div style={cards}>
-          {genreHorror.map((genre) => (
-            <p style={card}>
-              <img src={img + `${genre.poster_path}`} alt='Thriller' />
-              <div>Titre du film : {genre.original_title}</div>
-              <div>Date de Sortie : {genre.release_date}</div>
-            </p>
-          ))}
-        </div>
-      )}
-      {routerFilm.match.params.genre === 'Guerre' && (
-        <div style={cards}>
-          {genreGuerre.map((genre) => (
-            <p style={card}>
-              <img src={img + `${genre.poster_path}`} alt='Guerre' />
-              <div>Titre du film : {genre.original_title}</div>
-              <div>Date de Sortie : {genre.release_date}</div>
-            </p>
-          ))}
-        </div>
-      )}
-      {routerFilm.match.params.genre === 'Western' && (
-        <div style={cards}>
-          {genreWestern.map((genre) => (
-            <p style={card}>
-              <img src={img + `${genre.poster_path}`} alt='Western' />
-              <div>Titre du film : {genre.original_title}</div>
-              <div>Date de Sortie : {genre.release_date}</div>
-            </p>
-          ))}
-        </div>
-      )}
-    </div>
-  );
-};
+      <p className="results-number">{movies.length} résultats trouvés</p>
+      <div className="movies-container">
+        {movies.map(movie => {
+          return <Link to={`/movie/${movie.id}`} className="movie-container" key={movie.id}>
+            <img className="movie-picture" src={'https://image.tmdb.org/t/p/w500/' + movie.poster_path} alt={movie.title} />
+            <div className="movie-description-container">
+              <p className="movie-title">{movie.title}</p>
+              <div className="movie-score-container">
+                <p>{movie.vote_average}</p>
+                <svg className="star-icon" viewBox="0 0 17 16"><path fill="#4b95c3" d="M12.2 4.6l3.7.5c1 .1 1.5 1.4.7 2.1L14 9.8c-.3.3-.4.7-.4 1.1l.6 3.6c.2 1-.9 1.8-1.8 1.3l-3.3-1.7c-.4-.2-.8-.2-1.2 0l-3.3 1.7c-.9.5-2-.3-1.8-1.3l.6-3.6c.1-.4-.1-.8-.4-1.1L.4 7.3c-.8-.7-.3-2 .7-2.1l3.7-.5c.4-.1.8-.3 1-.7L7.4.7a1.32 1.32 0 0 1 2.3 0L11.3 4c.2.3.5.6.9.6z" /></svg>
+                <p>({movie.vote_count} votes)</p>
+              </div>
+              <div className="movie-synopsis-container">
+                <p className="movie-synopsis-title">Synopsis</p>
+                <p className="movie-synopsis-text">{movie.overview}</p>
+                <p className="movie-release-date">Date de sortie : {movie.release_date}</p>
+              </div>
+            </div>
+          </Link>
+        })}
+      </div>
+    </main>
+  )
+}
 
-export default FilmAction;
+export default Genre;

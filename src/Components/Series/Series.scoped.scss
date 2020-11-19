@@ -56,7 +56,7 @@ a {
   }
 }
 
-.movies-container {
+.series-container {
   display: grid;
   grid-auto-rows: auto;
   grid-template-columns: repeat(auto-fill, 1fr);
@@ -64,15 +64,15 @@ a {
   margin: 20px 0;
 }
 
-.movie-container {
+.serie-container {
   display: flex;
 }
 
-.movie-description-container {
+.serie-description-container {
   margin: 16px 0 0 24px;
 }
 
-.movie-picture {
+.serie-picture {
   width: 200px;
   height: 280px;
   object-fit: cover;
@@ -83,7 +83,7 @@ a {
   }
 }
 
-.movie-title {
+.serie-title {
   max-width: calc(100vw - 164px);
   font-size: 20px;
   overflow: hidden;
@@ -95,7 +95,7 @@ a {
   }
 }
 
-.movie-score-container {
+.serie-score-container {
   display: flex;
   align-items: center;
   margin-top: 16px;
@@ -110,7 +110,7 @@ a {
   height: 14px;
 }
 
-.movie-synopsis-container {
+.serie-synopsis-container {
   margin-top: 28px;
   
   @media (max-width: $desktop-break) {
@@ -118,18 +118,18 @@ a {
   }
 }
 
-.movie-synopsis-title {
+.serie-synopsis-title {
   font-size: 20px;
 }
 
-.movie-synopsis-text {
+.serie-synopsis-text {
   position: relative;
   margin-top: 2ch;
   max-height: calc(1.4rem * 3);
   overflow: hidden;
 }
 
-.movie-release-date {
+.serie-release-date {
   margin-top: 2ch;
   font-style: italic;
 }

@@ -1,9 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../../scss/style.scss';
 
 const SliderForTvShows = ({ resultsOfRequest }) => {
   const [index, setIndex] = useState(0);
+  const [width, setWidth] = useState();
+
+  useEffect(() => {
+    setWidth(window.innerWidth);
+    window.addEventListener('resize', () => setWidth(window.innerWidth));
+  }, []);
 
   const slideRight = () => {
     setIndex((index + 1) % resultsOfRequest.length);
@@ -39,15 +45,31 @@ const SliderForTvShows = ({ resultsOfRequest }) => {
           </svg>
         </button>
         <div className='container__slider'>
-          {resultsOfRequest.slice(index, index + 4).map((result) => (
-            <Link to={'/movie/' + result.id} key={result.id}>
-              <div key={result.id} className='container__slider--card'>
-                <img src={img + result.poster_path} className='container__slider--card--image' />
-                <h1 className='container__slider--card--title'>{result.name}</h1>
-                <p className='container__slider--card--date'>{result.first_air_date}</p>
-              </div>
-            </Link>
-          ))}
+          {width >= 768
+            ? resultsOfRequest.slice(index, index + 6).map((result) => (
+                <Link to={'/movie/' + result.id} key={result.id}>
+                  <div key={result.id} className='container__slider--card'>
+                    <img
+                      src={img + result.poster_path}
+                      className='container__slider--card--image'
+                    />
+                    <h1 className='container__slider--card--title'>{result.name}</h1>
+                    <p className='container__slider--card--date'>{result.first_air_date}</p>
+                  </div>
+                </Link>
+              ))
+            : resultsOfRequest.slice(index, index + 4).map((result) => (
+                <Link to={'/movie/' + result.id} key={result.id}>
+                  <div key={result.id} className='container__slider--card'>
+                    <img
+                      src={img + result.poster_path}
+                      className='container__slider--card--image'
+                    />
+                    <h1 className='container__slider--card--title'>{result.name}</h1>
+                    <p className='container__slider--card--date'>{result.first_air_date}</p>
+                  </div>
+                </Link>
+              ))}
         </div>
         <button onClick={slideRight}>
           <svg
