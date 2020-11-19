@@ -1,32 +1,32 @@
 import React, { useState } from 'react';
 import '../../scss/style.scss';
 
-const Slider = ({ bestMovies }) => {
+const SliderForTvShows = ({ resultsOfRequest }) => {
   const [index, setIndex] = useState(0);
 
   const slideRight = () => {
-    setIndex((index + 1) % bestMovies.length);
+    setIndex((index + 1) % resultsOfRequest.length);
   };
 
   const slideLeft = () => {
     const nextIndex = index - 1;
     if (nextIndex < 0) {
-      setIndex(bestMovies.length - 1);
+      setIndex(resultsOfRequest.length - 1);
     } else {
       setIndex(nextIndex);
     }
   };
 
   return (
-    bestMovies.length > 0 && (
+    resultsOfRequest.length > 0 && (
       <div className='container'>
         <button onClick={slideLeft}>{'<'}</button>
         <div className='container__slider'>
-          {bestMovies.slice(index, index + 4).map((bestMovie) => (
-            <div key={bestMovie.id} {...bestMovie} className='container__slider--card'>
+          {resultsOfRequest.slice(index, index + 4).map((result) => (
+            <div key={result.id} {...result} className='container__slider--card'>
               <img src='' alt='Image' />
-              <h1 className='container__slider--card--title'>{bestMovie.title}</h1>
-              <p className='container__slider--card--date'>{bestMovie.release_date}</p>
+              <h1 className='container__slider--card--title'>{result.name}</h1>
+              <p className='container__slider--card--date'>{result.first_air_date}</p>
             </div>
           ))}
         </div>
@@ -49,4 +49,4 @@ const Slider = ({ bestMovies }) => {
   );
 };
 
-export default Slider;
+export default SliderForTvShows;

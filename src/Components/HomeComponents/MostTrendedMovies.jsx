@@ -2,7 +2,7 @@ import React from 'react';
 import '../../scss/style.scss';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
-import Slider from './Slider';
+import SliderForMovies from '../Sliders/SliderForMovies';
 
 const MostViewedThread = () => {
   const [mostViewedThread, setMostViewedThread] = useState([]);
@@ -10,10 +10,11 @@ const MostViewedThread = () => {
   const API_KEY = process.env.REACT_APP_APIKEY;
   useEffect(() => {
     axios
-      .get(`https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=1`)
+      .get(`https://api.themoviedb.org/3/trending/all/day?api_key=${API_KEY}`)
       .then((res) => {
         const mostViewedThreadResults = res.data.results;
         setMostViewedThread(mostViewedThreadResults);
+        console.log(mostViewedThreadResults);
       })
       .catch((err) => console.log(err));
   }, []);
@@ -21,7 +22,7 @@ const MostViewedThread = () => {
   return (
     <div className='mostViewedThread'>
       <img src='' alt='' />
-      {/* <Slider mostViewedThread={mostViewedThread} /> */}
+      <SliderForMovies resultsOfRequest={mostViewedThread} />
     </div>
   );
 };
