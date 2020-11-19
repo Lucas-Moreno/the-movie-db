@@ -14,7 +14,7 @@ const App = () => {
       <Switch>
         <Redirect exact path='/' to='/movie'></Redirect>
         <Route exact path='/movie' component={HomePage}></Route>
-        <Route exact path='/movie/film/:genre' component={(routerFilm) => Genre(routerFilm)}></Route>
+        <Route exact path='/movies/:genreId/:genreName' component={Genre} />
         <Route path='/movie/:id' component={(routerProps) => MovieDetails(routerProps)}></Route>
         <Route path='/movies/:filter' component={Movies} />
         <Route component={NotFound}></Route>

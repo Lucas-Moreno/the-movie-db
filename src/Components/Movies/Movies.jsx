@@ -45,7 +45,7 @@ const Movies = ({match}) => {
       <p className="results-number">{movies.length} résultats trouvés</p>
       <div className="movies-container">
         {movies.map(movie => {
-          return  <Link to="/" className="movie-container" key={movie.id}>
+          return  <Link to={`/movie/${movie.id}`} className="movie-container" key={movie.id}>
             <img className="movie-picture" src={'https://image.tmdb.org/t/p/w500/' + movie.poster_path} alt={movie.title}/>
             <div className="movie-description-container">
               <p className="movie-title">{movie.title}</p>

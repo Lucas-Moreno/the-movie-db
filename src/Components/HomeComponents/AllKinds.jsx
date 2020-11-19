@@ -9,61 +9,61 @@ const AllKinds = () => {
   return (
     <div>
       <Slider dots slidesPerRow={7}>
-        <Link to="/movie/film/Action">
+        <Link to="/movies/28/Action">
           <CardGenre name="Action" />
         </Link>
-        <Link to="/movie/film/Thriller">
+        <Link to="/movies/53/Thriller">
           <CardGenre name="Thriller" />
         </Link>
-        <Link to="/movie/film/Romance">
+        <Link to="/movies/10749/Romance">
           <CardGenre name="Romance" />
         </Link>
-        <Link to="/movie/film/Aventure">
+        <Link to="/movies/12/Aventure">
           <CardGenre name="Aventure" />
         </Link>
-        <Link to="/movie/film/Animation">
+        <Link to="/movies/16/Animation">
           <CardGenre name="Animation" />
         </Link>
-        <Link to="/movie/film/Comedie">
+        <Link to="/movies/35/Comedie">
           <CardGenre name="Comedie" />
         </Link>
-        <Link to="/movie/film/Crime">
+        <Link to="/movies/80/Crime">
           <CardGenre name="Crime" />
         </Link>
-        <Link to="/movie/film/Documentaire">
+        <Link to="/movies/99/Documentaire">
           <CardGenre name="Documentaire" />
         </Link>
-        <Link to="/movie/film/Drama">
+        <Link to="/movies/18/Drama">
           <CardGenre name="Drama" />
         </Link>
-        <Link to="/movie/film/Famille">
+        <Link to="/movies/10751/Famille">
           <CardGenre name="Famille" />
         </Link>
-        <Link to="/movie/film/Fantaisie">
+        <Link to="/movies/14/Fantaisie">
           <CardGenre name="Fantaisie" />
         </Link>
-        <Link to="/movie/film/Histoire">
+        <Link to="/movies/16/Histoire">
           <CardGenre name="Histoire" />
         </Link>
-        <Link to="/movie/film/Musique">
+        <Link to="/movies/16/Musique">
           <CardGenre name="Musique" />
         </Link>
-        <Link to="/movie/film/Mystere">
+        <Link to="/movies/9648/Mystere">
           <CardGenre name="Mystere" />
         </Link>
-        <Link to="/movie/film/ScienceFiction">
+        <Link to="/movies/878/ScienceFiction">
           <CardGenre name="ScienceFiction" />
         </Link>
-        <Link to="/movie/film/TvMovie">
+        <Link to="/movies/10770/TvMovie">
           <CardGenre name="TvMovie" />
         </Link>
-        <Link to="/movie/film/Horreur">
+        <Link to="/movies/27/Horreur">
           <CardGenre name="Horreur" />
         </Link>
-        <Link to="/movie/film/Guerre">
+        <Link to="/movies/10752/Guerre">
           <CardGenre name="Guerre" />
         </Link>
-        <Link to="/movie/film/Western">
+        <Link to="/movies/37/Western">
           <CardGenre name="Western" />
         </Link>
       </Slider>
