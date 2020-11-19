@@ -14,7 +14,7 @@ const SliderForTvShows = ({ resultsOfRequest }) => {
       setIndex(resultsOfRequest.length - 1);
     } else {
       setIndex(nextIndex);
-    }
+    };
   };
 
   const img = `https://image.tmdb.org/t/p/w500`;
