@@ -29,7 +29,7 @@ const SearchBar = () => {
 
   return (
     <div className='searchbar'>
-      <input type='text' placeholder='Search' value={searchTerm} onChange={handleChange} />
+      <input type='text' value={searchTerm} onChange={handleChange} className='searchbar--input' />
       <ul>
         {searchResults.slice(0, 4).map((item) => (
           <li>{item.title}</li>
