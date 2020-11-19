@@ -2,7 +2,7 @@ import React from 'react';
 import '../../scss/style.scss';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
-import SliderForMovies from '../Sliders/SliderForMovies';
+import SliderForTrendingMovies from '../Sliders/SliderForTrendingMovies';
 
 const MostViewedThread = () => {
   const [mostViewedThread, setMostViewedThread] = useState([]);
@@ -22,7 +22,7 @@ const MostViewedThread = () => {
   return (
     <div className='mostViewedThread'>
       <img src='' alt='' />
-      <SliderForMovies resultsOfRequest={mostViewedThread} />
+      <SliderForTrendingMovies resultsOfRequest={mostViewedThread} />
     </div>
   );
 };

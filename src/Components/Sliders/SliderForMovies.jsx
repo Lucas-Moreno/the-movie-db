@@ -22,7 +22,21 @@ const Slider = ({ resultsOfRequest }) => {
   return (
     resultsOfRequest.length > 0 && (
       <div className='container'>
-        <button onClick={slideLeft}>{'<'}</button>
+        <button onClick={slideLeft}>
+          <svg
+            width='15'
+            height='66'
+            viewBox='0 0 15 66'
+            fill='none'
+            xmlns='http://www.w3.org/2000/svg'
+          >
+            <rect width='15' height='66' fill='black' fill-opacity='0.5' />
+            <path
+              d='M4.23488 32.7002L8.63129 28.2386C8.9435 27.9205 9.4519 27.9205 9.7651 28.2386C10.0779 28.5559 10.0779 29.0718 9.7651 29.3898L5.93608 33.2764L9.7651 37.1636C10.0787 37.4816 10.0779 37.9971 9.7651 38.315C9.6087 38.4742 9.4031 38.5538 9.1979 38.5538C8.9925 38.5538 8.78669 38.4742 8.63009 38.315L4.23508 33.8532C3.92167 33.5351 3.92167 33.0188 4.23488 32.7002Z'
+              fill='#DEDEDE'
+            />
+          </svg>
+        </button>
         <div className='container__slider'>
           {resultsOfRequest.slice(index, index + 4).map((result) => (
             <div key={result.id} {...result} className='container__slider--card'>
