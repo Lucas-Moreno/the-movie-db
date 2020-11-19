@@ -2,7 +2,7 @@ import React from 'react';
 import '../../scss/style.scss';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
-import Slider from './Slider';
+import Slider from '../Sliders/SliderForMovies';
 
 const BestMovies = () => {
   const [bestMovies, setPersons] = useState([]);
@@ -10,7 +10,7 @@ const BestMovies = () => {
   const API_KEY = process.env.REACT_APP_APIKEY;
   useEffect(() => {
     axios
-      .get(`https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}`)
+      .get(`https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}&language=en-US&page=1`)
       .then((res) => {
         const bestMoviesResults = res.data.results;
         setPersons(bestMoviesResults);
@@ -21,7 +21,7 @@ const BestMovies = () => {
   return (
     <div className='bestmovies'>
       <img src='' alt='' />
-      <Slider bestMovies={bestMovies} />
+      <Slider resultsOfRequest={bestMovies} />
     </div>
   );
 };

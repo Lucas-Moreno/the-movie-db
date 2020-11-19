@@ -1,6 +1,6 @@
 import React from 'react';
-import BestMovies from './HomeComponents/BestMovies';
-import MostViewedThreads from './HomeComponents/MostViewedThreads';
+import MostViewedMovies from './HomeComponents/MostViewedMovies';
+import MostViewedTvShows from './HomeComponents/MostViewedTvShows';
 
 const Movie = () => {
   return (
@@ -8,8 +8,8 @@ const Movie = () => {
       <h1>Home page</h1>
       <p>Les meilleurs films</p>
       <p>Tout voir</p>
-      <BestMovies />
-      <MostViewedThreads />
+      <MostViewedMovies />
+      <MostViewedTvShows />
     </div>
   );
 };
