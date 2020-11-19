@@ -2,8 +2,8 @@ import React from 'react';
 import '../scss/style.scss';
 import './App.scss';
 import HomePage from '../Components/HomePage';
-import MovieDetails from '../Components/MovieDetails/MovieDetails.jsx';
-import NotFound from '../Components/NotFound/NotFound.jsx';
+import MovieDetails from '../Components/MovieDetails/MovieDetails';
+import NotFound from '../Components/NotFound/NotFound';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 
 const App = () => {
