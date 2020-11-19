@@ -2,6 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../../scss/style.scss';
+import CardSearch from '../Cards/CardSearch';
 
 const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -31,9 +32,7 @@ const SearchBar = () => {
     <div className='searchbar'>
       <input type='text' value={searchTerm} onChange={handleChange} className='searchbar--input' />
       <ul>
-        {searchResults.slice(0, 4).map((item) => (
-          <li>{item.title}</li>
-        ))}
+        <CardSearch x={searchResults} />
       </ul>
     </div>
   );
