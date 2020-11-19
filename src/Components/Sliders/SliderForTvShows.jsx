@@ -53,7 +53,9 @@ const SliderForTvShows = ({ resultsOfRequest }) => {
                       src={img + result.poster_path}
                       className='container__slider--card--image'
                     />
-                    <h1 className='container__slider--card--title'>{result.name}</h1>
+                    <h1 className='container__slider--card--title'>
+                      {result.name && result.name.length > 12 ? result.name.slice(0, 12) : ''}
+                    </h1>
                     <p className='container__slider--card--date'>{result.first_air_date}</p>
                   </div>
                 </Link>
