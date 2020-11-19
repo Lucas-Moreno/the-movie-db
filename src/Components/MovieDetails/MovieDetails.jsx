@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import axios from "axios";
 
 
 const MovieDetails = (routerProps) => {
   let id = parseInt(routerProps.match.params.id)
+  const API_KEY = process.env.REACT_APP_APIKEY;
 
   const [movies, setMovies] = useState([])
 
-  const url = `https://api.themoviedb.org/3/movie/${id}?api_key=325e4a633b85a4ad0f68aa6594634b88`;
+  const url = `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&language=en-US`;
 
   useEffect(() => {
     axios
@@ -25,6 +27,9 @@ const MovieDetails = (routerProps) => {
 
   return (
     <div>
+      <Link to="/movie">
+        <button>Movie</button>
+      </Link>
       <h1>Page Movie details</h1>
       <p>Information en fonction de l'id numéro : {id}</p>
       <br />
