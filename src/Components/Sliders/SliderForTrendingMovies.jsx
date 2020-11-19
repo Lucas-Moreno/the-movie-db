@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../../scss/style.scss';
 
-const SliderForTvShows = ({ resultsOfRequest }) => {
+const SliderForTrendingMovies = ({ resultsOfRequest }) => {
   const [index, setIndex] = useState(0);
 
   const slideRight = () => {
@@ -21,7 +21,7 @@ const SliderForTvShows = ({ resultsOfRequest }) => {
 
   return (
     resultsOfRequest.length > 0 && (
-      <div className='container'>
+      <div className='containerTrendingMovies'>
         <button onClick={slideLeft}>
           <svg
             width='15'
@@ -37,12 +37,16 @@ const SliderForTvShows = ({ resultsOfRequest }) => {
             />
           </svg>
         </button>
-        <div className='container__slider'>
+        <div className='containerTrendingMovies__slider'>
           {resultsOfRequest.slice(index, index + 4).map((result) => (
-            <div key={result.id} {...result} className='container__slider--card'>
-              <img src={img + result.poster_path} className='container__slider--card--image' />
-              <h1 className='container__slider--card--title'>{result.name}</h1>
-              <p className='container__slider--card--date'>{result.first_air_date}</p>
+            <div key={result.id} {...result} className='containerTrendingMovies__slider--card'>
+              <img
+                src={img + result.poster_path}
+                alt='Image'
+                className='containerTrendingMovies__slider--card--image'
+              />
+              <h1 className='containerTrendingMovies__slider--card--title'>{result.title}</h1>
+              <p className='containerTrendingMovies__slider--card--date'>{result.release_date}</p>
             </div>
           ))}
         </div>
@@ -66,4 +70,4 @@ const SliderForTvShows = ({ resultsOfRequest }) => {
   );
 };
 
-export default SliderForTvShows;
+export default SliderForTrendingMovies;
