@@ -1,4 +1,8 @@
 .home {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100%;
   &__mostTrendedMovies {
     display: flex;
     flex-direction: column;

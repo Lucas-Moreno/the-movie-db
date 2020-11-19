@@ -17,6 +17,8 @@ const Slider = ({ resultsOfRequest }) => {
     }
   };
 
+  const img = `https://image.tmdb.org/t/p/w500`;
+
   return (
     resultsOfRequest.length > 0 && (
       <div className='container'>
@@ -24,7 +26,11 @@ const Slider = ({ resultsOfRequest }) => {
         <div className='container__slider'>
           {resultsOfRequest.slice(index, index + 4).map((result) => (
             <div key={result.id} {...result} className='container__slider--card'>
-              <img src='' alt='Image' />
+              <img
+                src={img + result.poster_path}
+                alt='Image'
+                className='container__slider--card--image'
+              />
               <h1 className='container__slider--card--title'>{result.title}</h1>
               <p className='container__slider--card--date'>{result.release_date}</p>
             </div>
@@ -32,15 +38,16 @@ const Slider = ({ resultsOfRequest }) => {
         </div>
         <button onClick={slideRight}>
           <svg
-            width='6'
-            height='11'
-            viewBox='0 0 6 11'
+            width='15'
+            height='66'
+            viewBox='0 0 15 66'
             fill='none'
             xmlns='http://www.w3.org/2000/svg'
           >
+            <rect width='15' height='66' fill='black' fill-opacity='0.5' />
             <path
-              d='M5.76512 5.76622L1.36871 10.1612C1.0565 10.4746 0.548102 10.4746 0.234901 10.1612C-0.0779002 9.84864 -0.0779002 9.34044 0.234901 9.02724L4.06392 5.19862L0.234901 1.36941C-0.0787002 1.0562 -0.0779002 0.548402 0.234901 0.235201C0.391302 0.0784003 0.596903 0 0.802103 0C1.0075 0 1.21331 0.0784003 1.36991 0.235201L5.76492 4.63042C6.07833 4.94382 6.07833 5.45242 5.76512 5.76622Z'
-              fill='#FFD700'
+              d='M11.4526 33.2778L7.05621 37.7395C6.744 38.0576 6.2356 38.0576 5.9224 37.7395C5.6096 37.4221 5.6096 36.9062 5.9224 36.5883L9.75142 32.7016L5.9224 28.8144C5.6088 28.4965 5.6096 27.981 5.9224 27.663C6.0788 27.5038 6.2844 27.4243 6.4896 27.4243C6.695 27.4243 6.90081 27.5038 7.05741 27.663L11.4524 32.1248C11.7658 32.443 11.7658 32.9593 11.4526 33.2778Z'
+              fill='#4B95C3'
             />
           </svg>
         </button>
