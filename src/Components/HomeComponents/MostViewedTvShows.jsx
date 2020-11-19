@@ -17,7 +17,7 @@ const MostViewedThread = () => {
         console.log(mostViewedThreadResults);
       })
       .catch((err) => console.log(err));
-  }, []);
+  }, [API_KEY]);
 
   return (
     <div className='mostViewedThread'>
