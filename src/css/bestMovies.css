@@ -19,5 +19,14 @@
 .yo {
   width: 50%;
   height: 200px;
+  margin: 10px;
   background-color: aqua;
+}
+
+.slider {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 20px;
 }

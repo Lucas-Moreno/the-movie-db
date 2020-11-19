@@ -2,34 +2,35 @@ import React from 'react';
 import '../../css/bestMovies.css';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
+import ImageSlider from './Slider';
 
-import Carousel from 'react-multi-carousel';
-import 'react-multi-carousel/lib/styles.css';
+// import Carousel from 'react-multi-carousel';
+// import 'react-multi-carousel/lib/styles.css';
 
 const BestMovies = () => {
   const [bestMovies, setPersons] = useState([]);
 
   const API_KEY = process.env.REACT_APP_APIKEY;
 
-  const responsive = {
-    superLargeDesktop: {
-      // the naming can be any, depends on you.
-      breakpoint: { max: 4000, min: 3000 },
-      items: 5,
-    },
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 3,
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 2,
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 2,
-    },
-  };
+  // const responsive = {
+  //   superLargeDesktop: {
+  //     // the naming can be any, depends on you.
+  //     breakpoint: { max: 4000, min: 3000 },
+  //     items: 5,
+  //   },
+  //   desktop: {
+  //     breakpoint: { max: 3000, min: 1024 },
+  //     items: 3,
+  //   },
+  //   tablet: {
+  //     breakpoint: { max: 1024, min: 464 },
+  //     items: 2,
+  //   },
+  //   mobile: {
+  //     breakpoint: { max: 464, min: 0 },
+  //     items: 2,
+  //   },
+  // };
   useEffect(() => {
     axios
       .get(`https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}`)
@@ -43,8 +44,9 @@ const BestMovies = () => {
   return (
     <div className='bestmovies'>
       <img src='' alt='' />
+      <ImageSlider bestMovies={bestMovies} />
       {/* {bestMovies.map((bestMovie) => ( */}
-      <Carousel
+      {/* <Carousel
         className='carousel-container'
         swipeable={true}
         draggable={false}
@@ -73,7 +75,7 @@ const BestMovies = () => {
         <div className='yo'>
           <p>Hey</p>
         </div>
-      </Carousel>
+      </Carousel> */}
       {/* // ))} */}
     </div>
   );
