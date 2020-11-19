@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../../scss/style.scss';
 
-const SliderForTvShows = ({ resultsOfRequest }) => {
+const Slider = ({ resultsOfRequest }) => {
   const [index, setIndex] = useState(0);
 
   const slideRight = () => {
@@ -14,7 +14,7 @@ const SliderForTvShows = ({ resultsOfRequest }) => {
       setIndex(resultsOfRequest.length - 1);
     } else {
       setIndex(nextIndex);
-    };
+    }
   };
 
   const img = `https://image.tmdb.org/t/p/w500`;
@@ -40,9 +40,13 @@ const SliderForTvShows = ({ resultsOfRequest }) => {
         <div className='container__slider'>
           {resultsOfRequest.slice(index, index + 4).map((result) => (
             <div key={result.id} className='container__slider--card'>
-              <img src={img + result.poster_path} className='container__slider--card--image' />
-              <h1 className='container__slider--card--title'>{result.name}</h1>
-              <p className='container__slider--card--date'>{result.first_air_date}</p>
+              <img
+                src={img + result.poster_path}
+                alt='Image'
+                className='container__slider--card--image'
+              />
+              <h1 className='container__slider--card--title'>{result.title}</h1>
+              <p className='container__slider--card--date'>{result.release_date}</p>
             </div>
           ))}
         </div>
@@ -66,4 +70,4 @@ const SliderForTvShows = ({ resultsOfRequest }) => {
   );
 };
 
-export default SliderForTvShows;
+export default Slider;

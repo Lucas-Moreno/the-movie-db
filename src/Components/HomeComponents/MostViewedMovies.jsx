@@ -20,7 +20,7 @@ const BestMovies = () => {
 
   return (
     <div className='bestmovies'>
-      <img src='' alt='' />
+      {/* <img src='' alt='' /> */}
       <Slider resultsOfRequest={bestMovies} />
     </div>
   );
