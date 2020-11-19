@@ -11,9 +11,10 @@ const Movie = () => {
   return (
     <Fragment>
       <div className='home'>
-        <h1>Qu’allez vous visionner aujourd’hui?</h1>
-        <h2>Search Bar</h2>
-        <SearchBar />
+        <span className='home__header'>
+          <h1 className='home__header--title'>Qu’allez vous visionner aujourd’hui?</h1>
+          <SearchBar />
+        </span>
         <div className='home__sliderContainer'>
           <span>
             <p className='home__sliderContainer--title'>Les meilleurs films</p>
