@@ -3,8 +3,9 @@
 }
 
 body {
-  background-color: $white;
-  // font-family: "Oswald";
+  background-color: $dark-background;
+  color: $white;
+  font-family: 'Poppins', sans-serif;
   @include smartphone {
     padding-left: 16px;
     padding-right: 16px;

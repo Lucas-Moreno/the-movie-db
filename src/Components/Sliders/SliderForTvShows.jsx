@@ -17,6 +17,8 @@ const SliderForTvShows = ({ resultsOfRequest }) => {
     }
   };
 
+  const img = `https://image.tmdb.org/t/p/w500`;
+
   return (
     resultsOfRequest.length > 0 && (
       <div className='container'>
@@ -24,7 +26,7 @@ const SliderForTvShows = ({ resultsOfRequest }) => {
         <div className='container__slider'>
           {resultsOfRequest.slice(index, index + 4).map((result) => (
             <div key={result.id} {...result} className='container__slider--card'>
-              <img src='' alt='Image' />
+              <img src={img + result.poster_path} className='container__slider--card--image' />
               <h1 className='container__slider--card--title'>{result.name}</h1>
               <p className='container__slider--card--date'>{result.first_air_date}</p>
             </div>

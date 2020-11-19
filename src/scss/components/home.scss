@@ -1,0 +1,20 @@
+.home {
+  &__mostTrendedMovies {
+    display: flex;
+    flex-direction: column;
+    & span {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    &--title {
+      font-size: 14px;
+      font-weight: 600;
+    }
+    &--viewAll {
+      font-size: 11px;
+      color: $primary-blue;
+      font-family: 'Roboto', sans-serif;
+    }
+  }
+}
