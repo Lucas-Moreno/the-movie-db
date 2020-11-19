@@ -69,7 +69,9 @@ const SliderForTrendingMovies = ({ resultsOfRequest }) => {
                       alt='Image'
                       className='containerTrendingMovies__slider--card--image'
                     />
-                    <h1 className='containerTrendingMovies__slider--card--title'>{result.title}</h1>
+                    <h1 className='containerTrendingMovies__slider--card--title'>
+                      {result.title.slice(0, 8)}
+                    </h1>
                     <p className='containerTrendingMovies__slider--card--date'>
                       {result.release_date}
                     </p>
