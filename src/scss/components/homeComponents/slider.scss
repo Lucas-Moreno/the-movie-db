@@ -1,0 +1,29 @@
+.container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  & button {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  &__slider {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    &--card {
+      width: 50%;
+      height: 20%;
+      margin: 0 2%;
+
+      font-size: 11px;
+      &--title {
+        font-weight: 600;
+      }
+      &--date {
+        font-weight: 200;
+      }
+    }
+  }
+}

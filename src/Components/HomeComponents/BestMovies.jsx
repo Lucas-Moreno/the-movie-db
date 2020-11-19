@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../scss/bestMovies.scss';
+import '../../scss/style.scss';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import Slider from './Slider';
