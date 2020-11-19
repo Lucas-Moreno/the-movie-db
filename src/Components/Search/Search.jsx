@@ -13,22 +13,25 @@ const SearchBar = () => {
   };
 
   useEffect(() => {
-    axios
-      .get(`https://api.themoviedb.org/3/trending/all/day?api_key=${API_KEY}`)
-      .then((res) => {
-        const mostViewedThreadResults = res.data.results;
-        console.log(mostViewedThreadResults);
-        mostViewedThreadResults.filter((result) => console.log(result));
-        setSearchResults(mostViewedThreadResults);
-      })
-      .catch((err) => console.log(err));
-  }, []);
+    if (searchTerm) {
+      axios
+        .get(
+          `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&page=1&include_adult=false&query=${searchTerm}`,
+        )
+        .then((res) => {
+          const mostViewedThreadResults = res.data.results;
+          mostViewedThreadResults.filter((result) => console.log(result));
+          setSearchResults(mostViewedThreadResults);
+        })
+        .catch((err) => console.log(err));
+    }
+  }, [searchTerm]);
 
   return (
     <div className='searchbar'>
       <input type='text' placeholder='Search' value={searchTerm} onChange={handleChange} />
       <ul>
-        {searchResults.map((item) => (
+        {searchResults.slice(0, 4).map((item) => (
           <li>{item.title}</li>
         ))}
       </ul>
