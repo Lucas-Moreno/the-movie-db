@@ -1,10 +1,11 @@
 import React from 'react';
 import '../scss/style.scss';
 import './App.scss';
+import Genre from '../Components/Genre/Genre';
 import Movies from '../Components/Movies/Movies';
 import HomePage from '../Components/HomePage';
-import MovieDetails from '../Components/MovieDetails/MovieDetails.jsx';
-import NotFound from '../Components/NotFound/NotFound.jsx';
+import MovieDetails from '../Components/MovieDetails/MovieDetails';
+import NotFound from '../Components/NotFound/NotFound';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 
 const App = () => {
@@ -13,7 +14,8 @@ const App = () => {
       <Switch>
         <Redirect exact path='/' to='/movie'></Redirect>
         <Route exact path='/movie' component={HomePage}></Route>
-        <Route path='/movie/:id' render={(routerProps) => MovieDetails(routerProps)}></Route>
+        <Route exact path='/movie/film/:genre' component={(routerFilm) => Genre(routerFilm)}></Route>
+        <Route path='/movie/:id' component={(routerProps) => MovieDetails(routerProps)}></Route>
         <Route path='/movies/:filter' component={Movies} />
         <Route component={NotFound}></Route>
       </Switch>
