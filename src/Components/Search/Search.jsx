@@ -32,7 +32,7 @@ const SearchBar = () => {
     <div className='searchbar'>
       <input type='text' value={searchTerm} onChange={handleChange} className='searchbar--input' />
       {/* <ul className='searchbar--search'> */}
-      {searchTerm && <CardSearch x={searchResults} className='searchbar--search' />}
+      {searchTerm && <CardSearch result={searchResults} className='searchbar--search' />}
       {/* </ul> */}
     </div>
   );
