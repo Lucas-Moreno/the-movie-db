@@ -1,6 +1,5 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
 import '../../scss/style.scss';
 import CardSearch from '../Cards/CardSearch';

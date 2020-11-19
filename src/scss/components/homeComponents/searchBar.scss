@@ -8,10 +8,8 @@
     padding: 4px;
     &:focus {
       outline: none;
+      background-image: none;
     }
-  }
-  &--searchbar {
-    z-index: 10000;
   }
   &--yo {
     z-index: 10;
