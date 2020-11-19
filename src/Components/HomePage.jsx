@@ -1,5 +1,6 @@
 import React from 'react';
 import BestMovies from './HomeComponents/BestMovies';
+import MostViewedThreads from './HomeComponents/MostViewedThreads';
 
 const Movie = () => {
   return (
@@ -8,6 +9,7 @@ const Movie = () => {
       <p>Les meilleurs films</p>
       <p>Tout voir</p>
       <BestMovies />
+      <MostViewedThreads />
     </div>
   );
 };
