@@ -2,13 +2,16 @@ import React, { useState } from 'react';
 import CardGenre from "../HomeComponents/CardGenre";
 import { Link } from 'react-router-dom';
 import Slider from 'infinite-react-carousel';
+import '../../scss/components/allKinds/allKinds.scss';
 
 
 const AllKinds = () => {
 
+  let id = 6
+
   return (
-    <div>
-      <Slider dots slidesPerRow={7}>
+    <div className="container__carousel">
+      <Slider dots slidesPerRow={id}>
         <Link to="/movie/film/Action">
           <CardGenre name="Action" />
         </Link>

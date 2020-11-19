@@ -40,9 +40,10 @@ const FilmAction = (routerFilm) => {
   const img = `https://image.tmdb.org/t/p/w500`;
   return (
     <div>
-      <Link to='/movie'>
-        <h1 style={margin}> Tout les films {routerFilm.match.params.genre} :</h1>
+      <Link to="/movie">
+        <button>Retourner à la home</button>
       </Link>
+      <h1 style={margin}> Tout les films {routerFilm.match.params.genre} :</h1>
       {routerFilm.match.params.genre === 'Action' && (
         <div style={cards}>
           {genreAction.map((genre) => (

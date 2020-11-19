@@ -28,7 +28,7 @@ const MovieDetails = (routerProps) => {
   return (
     <div>
       <Link to="/movie">
-        <button>Movie</button>
+        <button>Retourner à la home</button>
       </Link>
       <h1>Page Movie details</h1>
       <p>Information en fonction de l'id numéro : {id}</p>
