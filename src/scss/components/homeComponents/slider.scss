@@ -24,7 +24,7 @@
       // height: 20%;
       margin: 0 2%;
       font-size: 11px;
-      opacity: 0.8;
+      opacity: 0.9;
       &:hover {
         transition: transform ease-in-out 0.3s;
         transform: scale(1.08);
@@ -50,8 +50,8 @@
 
 @media screen and (max-width: 1355px) {
   .container__slider--card--image {
-    width: 150px;
-    height: 150px;
+    width: 180px;
+    height: 180px;
   }
   .container__slider--card {
     margin: 0 6px;
