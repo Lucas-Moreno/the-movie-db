@@ -1,12 +1,14 @@
 .home {
   display: flex;
   flex-direction: column;
-  // margin: 0vw 4vw;
   padding-bottom: 4vw;
   &__header {
     font-size: 24px;
     text-align: center;
     padding-top: 3vw;
+    @media screen and (min-width: 768px) {
+      text-align: left;
+    }
     &--title {
       padding-bottom: 4vw;
       font-size: 42px;

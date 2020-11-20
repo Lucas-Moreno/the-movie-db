@@ -1,5 +1,8 @@
 .searchbar {
   text-align: center;
+  @media screen and (min-width: 768px) {
+    text-align: left;
+  }
   &--input {
     border: 1px solid $primary-blue;
     border-radius: 20px;
@@ -15,12 +18,20 @@
       background-image: none;
     }
   }
-  &--listOfSearch {
+  &__listOfSearch {
     z-index: 2;
     position: absolute;
     background-color: $dark-background;
     width: 100%;
     height: auto;
+    &--showTextMatchingResults {
+      text-align-last: left;
+      font-size: 14px;
+      padding: 1.6em;
+      @media screen and (min-width: 768px) {
+        font-size: 16px;
+      }
+    }
   }
 }
 

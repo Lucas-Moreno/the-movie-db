@@ -42,11 +42,13 @@ const SearchBar = () => {
         className='searchbar--input'
         placeholder='Game Of Thones..'
       />
-      <div className='searchbar--listOfSearch'>
+      <div className='searchbar__listOfSearch'>
         {searchTerm && (
           <Fragment>
-            <CardSearch result={searchResults} className='searchbar--search' />
-            <p>Résultats correspondant à "{searchTerm}"</p>
+            <CardSearch result={searchResults} className='searchbar__listOfSearch--search' />
+            <p className='searchbar__listOfSearch--showTextMatchingResults'>
+              Résultats correspondant à "{searchTerm}"
+            </p>
           </Fragment>
         )}
       </div>
