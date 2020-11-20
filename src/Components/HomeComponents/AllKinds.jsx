@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import CardGenre from "../HomeComponents/CardGenre";
+import CardGenre from '../HomeComponents/CardGenre';
 import { Link } from 'react-router-dom';
 import Slider from 'infinite-react-carousel';
 import '../../scss/components/allKinds/allKinds.scss';
 
-
 const AllKinds = () => {
-
   const [width, setWidth] = useState();
 
   useEffect(() => {
@@ -19,187 +17,130 @@ const AllKinds = () => {
     };
   }, []);
 
-
   return (
     <div>
-      {width >= 1600 ?
-        <Slider dots slidesPerRow={6}>
-          <Link to="/movies/28/Action">
-            <CardGenre name="Action" />
+      {width > 768 ? (
+        <Slider dots slidesPerRow={5} centerMode={true}>
+          <Link to='/movies/28/Action'>
+            <CardGenre name='Action' />
           </Link>
-          <Link to="/movies/53/Thriller">
-            <CardGenre name="Thriller" />
+          <Link to='/movies/53/Thriller'>
+            <CardGenre name='Thriller' />
           </Link>
-          <Link to="/movies/10749/Romance">
-            <CardGenre name="Romance" />
+          <Link to='/movies/10749/Romance'>
+            <CardGenre name='Romance' />
           </Link>
-          <Link to="/movies/12/Aventure">
-            <CardGenre name="Aventure" />
+          <Link to='/movies/12/Aventure'>
+            <CardGenre name='Aventure' />
           </Link>
-          <Link to="/movies/16/Animation">
-            <CardGenre name="Animation" />
+          <Link to='/movies/16/Animation'>
+            <CardGenre name='Animation' />
           </Link>
-          <Link to="/movies/35/Comedie">
-            <CardGenre name="Comedie" />
+          <Link to='/movies/35/Comedie'>
+            <CardGenre name='Comedie' />
           </Link>
-          <Link to="/movies/80/Crime">
-            <CardGenre name="Crime" />
+          <Link to='/movies/80/Crime'>
+            <CardGenre name='Crime' />
           </Link>
-          <Link to="/movies/99/Documentaire">
-            <CardGenre name="Documentaire" />
+          <Link to='/movies/99/Documentaire'>
+            <CardGenre name='Documentaire' />
           </Link>
-          <Link to="/movies/18/Drama">
-            <CardGenre name="Drama" />
+          <Link to='/movies/18/Drama'>
+            <CardGenre name='Drama' />
           </Link>
-          <Link to="/movies/10751/Famille">
-            <CardGenre name="Famille" />
+          <Link to='/movies/10751/Famille'>
+            <CardGenre name='Famille' />
           </Link>
-          <Link to="/movies/14/Fantaisie">
-            <CardGenre name="Fantaisie" />
+          <Link to='/movies/14/Fantaisie'>
+            <CardGenre name='Fantaisie' />
           </Link>
-          <Link to="/movies/16/Histoire">
-            <CardGenre name="Histoire" />
+          <Link to='/movies/16/Histoire'>
+            <CardGenre name='Histoire' />
           </Link>
-          <Link to="/movies/16/Musique">
-            <CardGenre name="Musique" />
+          <Link to='/movies/16/Musique'>
+            <CardGenre name='Musique' />
           </Link>
-          <Link to="/movies/9648/Mystere">
-            <CardGenre name="Mystere" />
+          <Link to='/movies/9648/Mystere'>
+            <CardGenre name='Mystere' />
           </Link>
-          <Link to="/movies/878/ScienceFiction">
-            <CardGenre name="ScienceFiction" />
+          <Link to='/movies/878/ScienceFiction'>
+            <CardGenre name='ScienceFiction' />
           </Link>
-          <Link to="/movies/10770/TvMovie">
-            <CardGenre name="TvMovie" />
+          <Link to='/movies/10770/TvMovie'>
+            <CardGenre name='TvMovie' />
           </Link>
-          <Link to="/movies/27/Horreur">
-            <CardGenre name="Horreur" />
+          <Link to='/movies/27/Horreur'>
+            <CardGenre name='Horreur' />
           </Link>
-          <Link to="/movies/10752/Guerre">
-            <CardGenre name="Guerre" />
+          <Link to='/movies/10752/Guerre'>
+            <CardGenre name='Guerre' />
           </Link>
-          <Link to="/movies/37/Western">
-            <CardGenre name="Western" />
+          <Link to='/movies/37/Western'>
+            <CardGenre name='Western' />
           </Link>
-        </Slider> :
-        width >= 900 ? <Slider dots slidesPerRow={4}>
-          <Link to="/movies/28/Action">
-            <CardGenre name="Action" />
+        </Slider>
+      ) : (
+        <Slider slidesPerRow={1} centerMode={true} adaptiveHeight={true}>
+          <Link to='/movies/28/Action'>
+            <CardGenre name='Action' />
           </Link>
-          <Link to="/movies/53/Thriller">
-            <CardGenre name="Thriller" />
+          <Link to='/movies/53/Thriller'>
+            <CardGenre name='Thriller' />
           </Link>
-          <Link to="/movies/10749/Romance">
-            <CardGenre name="Romance" />
+          <Link to='/movies/10749/Romance'>
+            <CardGenre name='Romance' />
           </Link>
-          <Link to="/movies/12/Aventure">
-            <CardGenre name="Aventure" />
+          <Link to='/movies/12/Aventure'>
+            <CardGenre name='Aventure' />
           </Link>
-          <Link to="/movies/16/Animation">
-            <CardGenre name="Animation" />
+          <Link to='/movies/16/Animation'>
+            <CardGenre name='Animation' />
           </Link>
-          <Link to="/movies/35/Comedie">
-            <CardGenre name="Comedie" />
+          <Link to='/movies/35/Comedie'>
+            <CardGenre name='Comedie' />
           </Link>
-          <Link to="/movies/80/Crime">
-            <CardGenre name="Crime" />
+          <Link to='/movies/80/Crime'>
+            <CardGenre name='Crime' />
           </Link>
-          <Link to="/movies/99/Documentaire">
-            <CardGenre name="Documentaire" />
+          <Link to='/movies/99/Documentaire'>
+            <CardGenre name='Documentaire' />
           </Link>
-          <Link to="/movies/18/Drama">
-            <CardGenre name="Drama" />
+          <Link to='/movies/18/Drama'>
+            <CardGenre name='Drama' />
           </Link>
-          <Link to="/movies/10751/Famille">
-            <CardGenre name="Famille" />
+          <Link to='/movies/10751/Famille'>
+            <CardGenre name='Famille' />
           </Link>
-          <Link to="/movies/14/Fantaisie">
-            <CardGenre name="Fantaisie" />
+          <Link to='/movies/14/Fantaisie'>
+            <CardGenre name='Fantaisie' />
           </Link>
-          <Link to="/movies/16/Histoire">
-            <CardGenre name="Histoire" />
+          <Link to='/movies/16/Histoire'>
+            <CardGenre name='Histoire' />
           </Link>
-          <Link to="/movies/16/Musique">
-            <CardGenre name="Musique" />
+          <Link to='/movies/16/Musique'>
+            <CardGenre name='Musique' />
           </Link>
-          <Link to="/movies/9648/Mystere">
-            <CardGenre name="Mystere" />
+          <Link to='/movies/9648/Mystere'>
+            <CardGenre name='Mystere' />
           </Link>
-          <Link to="/movies/878/ScienceFiction">
-            <CardGenre name="ScienceFiction" />
+          <Link to='/movies/878/ScienceFiction'>
+            <CardGenre name='ScienceFiction' />
           </Link>
-          <Link to="/movies/10770/TvMovie">
-            <CardGenre name="TvMovie" />
+          <Link to='/movies/10770/TvMovie'>
+            <CardGenre name='TvMovie' />
           </Link>
-          <Link to="/movies/27/Horreur">
-            <CardGenre name="Horreur" />
+          <Link to='/movies/27/Horreur'>
+            <CardGenre name='Horreur' />
           </Link>
-          <Link to="/movies/10752/Guerre">
-            <CardGenre name="Guerre" />
+          <Link to='/movies/10752/Guerre'>
+            <CardGenre name='Guerre' />
           </Link>
-          <Link to="/movies/37/Western">
-            <CardGenre name="Western" />
+          <Link to='/movies/37/Western'>
+            <CardGenre name='Western' />
           </Link>
-        </Slider> : <Slider dots slidesPerRow={1}>
-            <Link to="/movies/28/Action">
-              <CardGenre name="Action" />
-            </Link>
-            <Link to="/movies/53/Thriller">
-              <CardGenre name="Thriller" />
-            </Link>
-            <Link to="/movies/10749/Romance">
-              <CardGenre name="Romance" />
-            </Link>
-            <Link to="/movies/12/Aventure">
-              <CardGenre name="Aventure" />
-            </Link>
-            <Link to="/movies/16/Animation">
-              <CardGenre name="Animation" />
-            </Link>
-            <Link to="/movies/35/Comedie">
-              <CardGenre name="Comedie" />
-            </Link>
-            <Link to="/movies/80/Crime">
-              <CardGenre name="Crime" />
-            </Link>
-            <Link to="/movies/99/Documentaire">
-              <CardGenre name="Documentaire" />
-            </Link>
-            <Link to="/movies/18/Drama">
-              <CardGenre name="Drama" />
-            </Link>
-            <Link to="/movies/10751/Famille">
-              <CardGenre name="Famille" />
-            </Link>
-            <Link to="/movies/14/Fantaisie">
-              <CardGenre name="Fantaisie" />
-            </Link>
-            <Link to="/movies/16/Histoire">
-              <CardGenre name="Histoire" />
-            </Link>
-            <Link to="/movies/16/Musique">
-              <CardGenre name="Musique" />
-            </Link>
-            <Link to="/movies/9648/Mystere">
-              <CardGenre name="Mystere" />
-            </Link>
-            <Link to="/movies/878/ScienceFiction">
-              <CardGenre name="ScienceFiction" />
-            </Link>
-            <Link to="/movies/10770/TvMovie">
-              <CardGenre name="TvMovie" />
-            </Link>
-            <Link to="/movies/27/Horreur">
-              <CardGenre name="Horreur" />
-            </Link>
-            <Link to="/movies/10752/Guerre">
-              <CardGenre name="Guerre" />
-            </Link>
-            <Link to="/movies/37/Western">
-              <CardGenre name="Western" />
-            </Link>
-          </Slider>}
-    </div >
+        </Slider>
+      )}
+    </div>
   );
 };
 

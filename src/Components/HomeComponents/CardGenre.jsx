@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const CardGenre = (props) => {
   const card = {
@@ -9,13 +9,15 @@ const CardGenre = (props) => {
     justifyContent: 'center',
     alignItems: 'center',
     cursor: 'pointer',
-    color: 'white'
-  }
+    color: 'white',
+    borderRadius: '5px',
+  };
+
   return (
     <div style={card}>
       <p>{props.name}</p>
     </div>
-  )
-}
+  );
+};
 
-export default CardGenre
+export default CardGenre;
