@@ -46,7 +46,7 @@ const SliderForTvShows = ({ resultsOfRequest }) => {
         </button>
         <div className='container__slider'>
           {width >= 768
-            ? resultsOfRequest.slice(index, index + 6).map((result) => (
+            ? resultsOfRequest.slice(index, index + 5).map((result) => (
                 <Link to={'/movie/' + result.id} key={result.id}>
                   <div key={result.id} className='container__slider--card'>
                     <img
