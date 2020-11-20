@@ -69,20 +69,20 @@
 }
 
 .similar {
-  padding-top: 4em;
+  padding-top: 2em;
 }
 
 .movieDetails__similars {
   display: flex;
   flex-direction: row;
   width: 100%;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 .movieDetails__similar {
-  display: flex;
-  flex-direction: column;
+
+
   margin-top: 4vh;
-  justify-content: space-evenly;
+
 }
 
 .movieDetails__similar__title {
@@ -126,3 +126,13 @@
     width: 130px;
   }
 }
+
+// @media screen and (min-width: 1055px) {
+//   .movieDetails__similar__title {
+//     width: 128px;
+//   }
+
+//   .movieDetails__similar__cover {
+//     width: 145px;
+//   }
+// }
