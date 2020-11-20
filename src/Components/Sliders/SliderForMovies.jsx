@@ -7,8 +7,13 @@ const Slider = ({ resultsOfRequest }) => {
   const [width, setWidth] = useState();
 
   useEffect(() => {
-    setWidth(window.innerWidth);
-    window.addEventListener('resize', () => setWidth(window.innerWidth));
+    function windowResize() {
+      setWidth(window.innerWidth);
+    }
+    window.addEventListener('resize', windowResize);
+    return () => {
+      window.removeEventListener('resize', windowResize);
+    };
   }, []);
 
   const slideRight = () => {
@@ -47,35 +52,35 @@ const Slider = ({ resultsOfRequest }) => {
         <div className='container__slider'>
           {width >= 768
             ? resultsOfRequest.slice(index, index + 5).map((result) => (
-                <Link to={'/movie/' + result.id} key={result.id}>
-                  <div key={result.id} className='container__slider--card'>
-                    <img
-                      src={img + result.poster_path}
-                      alt='Image'
-                      className='container__slider--card--image'
-                    />
-                    <h1 className='container__slider--card--title'>
-                      {result.title.length > 12 ? result.title.slice(0, 12) : result.title}
-                    </h1>
-                    <p className='container__slider--card--date'>{result.release_date}</p>
-                  </div>
-                </Link>
-              ))
+              <Link to={'/movie/' + result.id} key={result.id}>
+                <div key={result.id} className='container__slider--card'>
+                  <img
+                    src={img + result.poster_path}
+                    alt='Image'
+                    className='container__slider--card--image'
+                  />
+                  <h1 className='container__slider--card--title'>
+                    {result.title.length > 12 ? result.title.slice(0, 12) : result.title}
+                  </h1>
+                  <p className='container__slider--card--date'>{result.release_date}</p>
+                </div>
+              </Link>
+            ))
             : resultsOfRequest.slice(index, index + 4).map((result) => (
-                <Link to={'/movie/' + result.id} key={result.id}>
-                  <div key={result.id} className='container__slider--card'>
-                    <img
-                      src={img + result.poster_path}
-                      alt='Image'
-                      className='container__slider--card--image'
-                    />
-                    <h1 className='container__slider--card--title'>
-                      {result.original_title.slice(0, 8)}
-                    </h1>
-                    <p className='container__slider--card--date'>{result.release_date}</p>
-                  </div>
-                </Link>
-              ))}
+              <Link to={'/movie/' + result.id} key={result.id}>
+                <div key={result.id} className='container__slider--card'>
+                  <img
+                    src={img + result.poster_path}
+                    alt='Image'
+                    className='container__slider--card--image'
+                  />
+                  <h1 className='container__slider--card--title'>
+                    {result.original_title.slice(0, 8)}
+                  </h1>
+                  <p className='container__slider--card--date'>{result.release_date}</p>
+                </div>
+              </Link>
+            ))}
         </div>
         <button onClick={slideRight}>
           <svg
