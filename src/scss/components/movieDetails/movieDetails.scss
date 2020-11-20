@@ -21,7 +21,7 @@
 
 .movieDetails__title {
   font-size: 18px;
-  margin-top: 30vh;
+  margin-top: 28vh;
 }
 
 .movieDetails__score {
@@ -49,36 +49,60 @@
 .movieDetails__synopsis {
   font-size: 15px;
   font-weight: 500;
-  margin-top: 3.5vh;
+  margin-top: 3vh;
 }
 
 .movieDetails__content {
   font-size: 14px;
   line-height: 1.6em;
-  margin-top: 3vh;
+  margin-top: 2vh;
   width: 85vw;
 }
 
 .movieDetails__similar {
   display: flex;
-  flex-direction: column;
+  margin-top: 4vh;
+  justify-content: space-evenly;
 }
 
 .movieDetails__similar__title {
   font-size: 11px;
+  width: 58px;
+}
+
+.movieDetails__similar__cover {
+  width: 60px;
 }
 
 @media screen and (min-width: 555px) {
   .movieDetails__cover__content {
     height: 90vh;
   }
+
+  .movieDetails__similar__title {
+    font-size: 11px;
+    width: 98px;
+  }
+  
+  .movieDetails__similar__cover {
+    width: 100px;
+  }
 }
 
 @media screen and (min-width: 876px) {
   .movieDetails__cover__content {
-    height: 120vh;
+    height: 140vh;
   }
   .movieDetails__return {
     left:5vw;
+  }
+
+  .movieDetails__similar__title {
+    font-size: 11px;
+    width: 128px;
+  }
+  
+  .movieDetails__similar__cover {
+    width: 130px;
   }
 }
