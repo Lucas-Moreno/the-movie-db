@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../../scss/style.scss';
@@ -42,8 +42,15 @@ const SearchBar = () => {
         className='searchbar--input'
         placeholder='Game Of Thones..'
       />
-      <div className='searchbar--listOfSearch'>
-        {searchTerm && <CardSearch result={searchResults} className='searchbar--search' />}
+      <div className='searchbar__listOfSearch'>
+        {searchTerm && (
+          <Fragment>
+            <CardSearch result={searchResults} className='searchbar__listOfSearch--search' />
+            <p className='searchbar__listOfSearch--showTextMatchingResults'>
+              Résultats correspondant à "{searchTerm}"
+            </p>
+          </Fragment>
+        )}
       </div>
     </div>
   );
