@@ -12,14 +12,14 @@ const AllKinds = () => {
       setWidth(window.innerWidth);
     }
     window.addEventListener('resize', windowResize);
-    // return () => {
-    //   window.removeEventListener('resize', windowResize);
-    // };
+    return () => {
+      window.removeEventListener('resize', windowResize);
+    };
   }, []);
 
   return (
     <div>
-      {width >= 768 ? (
+      {width > 768 ? (
         <Slider dots slidesPerRow={5} centerMode={true}>
           <Link to='/movies/28/Action'>
             <CardGenre name='Action' />
@@ -80,7 +80,7 @@ const AllKinds = () => {
           </Link>
         </Slider>
       ) : (
-        <Slider dots slidesPerRow={1} centerMode={true}>
+        <Slider slidesPerRow={1} centerMode={true} adaptiveHeight={true}>
           <Link to='/movies/28/Action'>
             <CardGenre name='Action' />
           </Link>
