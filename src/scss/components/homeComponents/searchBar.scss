@@ -16,13 +16,12 @@
       background-image: none;
     }
   }
-  &--yo {
+  &--listOfSearch {
+    z-index: 2;
     position: absolute;
     background-color: $dark-background;
     width: 100%;
-  }
-  &--search:hover {
-    background-color: beige;
+    height: auto;
   }
 }
 

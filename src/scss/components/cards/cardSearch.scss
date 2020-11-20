@@ -5,6 +5,10 @@
   padding: 0.8em;
   max-height: 80px;
   width: 100%;
+  @media screen and (max-width: 768px) {
+    font-size: 14px;
+  }
+  font-size: 16px;
   &:hover {
     transition: transform ease-in-out 0.2s;
     transform: scale(1.01);

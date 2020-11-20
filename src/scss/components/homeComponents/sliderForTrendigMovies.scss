@@ -20,6 +20,12 @@
     &--card {
       margin: 0 2%;
       font-size: 11px;
+      opacity: 0.8;
+      &:hover {
+        transition: transform ease-in-out 0.3s;
+        transform: scale(1.08);
+        opacity: 1;
+      }
       &--image {
         width: 50px;
         height: 100%;
@@ -32,6 +38,7 @@
       &--date {
         font-weight: 200;
         font-size: 9px;
+        padding-top: 16px;
       }
     }
   }

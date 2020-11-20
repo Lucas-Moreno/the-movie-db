@@ -42,7 +42,7 @@ const SearchBar = () => {
         className='searchbar--input'
         placeholder='Game Of Thones..'
       />
-      <div className='searchbar--yo'>
+      <div className='searchbar--listOfSearch'>
         {searchTerm && <CardSearch result={searchResults} className='searchbar--search' />}
       </div>
     </div>

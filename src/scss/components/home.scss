@@ -15,12 +15,12 @@
   &__sliderContainer {
     display: flex;
     flex-direction: column;
+    padding-top: 8em;
     & span {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      padding-top: 3vw;
-      padding-bottom: 3vw;
+      padding-bottom: 2em;
     }
     &--title {
       font-size: 22px;
