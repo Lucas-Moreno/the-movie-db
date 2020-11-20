@@ -31,8 +31,14 @@
   font-weight: 300;
 }
 
+.slider__container{
+  display:flex;
+  justify-content: center;
+}
+
 @media screen and (max-width: 640px) {
   .title_carousel {
     font-size: 12px;
   }
 }
+

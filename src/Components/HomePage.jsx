@@ -39,7 +39,10 @@ const Movie = () => {
         </div>
       </div>
       <div>
-        <AllKinds />
+        <p className="home__sliderContainer--title">Films par genre</p>
+        <div className="slider__container">
+          <AllKinds />
+        </div>
       </div>
     </Fragment>
   );
