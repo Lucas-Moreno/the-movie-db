@@ -1,0 +1,54 @@
+.movieDetails__cover {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 40vh;
+  overflow: hidden;
+}
+.movieDetails__cover__content {
+  width: 100vw;
+  position: absolute;
+
+  z-index: -1;
+}
+
+.movieDetails__title {
+  font-size: 18px;
+  margin-top: 30vh;
+}
+
+.movieDetails__score {
+  font-size: 11px;
+  display: inline;
+  margin-right: 5vw;
+}
+
+.movieDetails__vote {
+  font-size: 11px;
+}
+
+.movieDetails__link {
+  display: block;
+  margin-top: 2vh;
+  font-size: 14px;
+  color: $primary-blue;
+}
+
+.movieDetails__link:after{
+  content : "\002794";
+  margin-left: 8px;
+}
+
+.movieDetails__synopsis {
+  font-size: 15px;
+  font-weight: 500;
+  margin-top: 3.5vh;
+}
+
+.movieDetails__content {
+  font-size: 14px;
+  line-height: 1.6em;
+  margin-top: 3vh;
+  width: 85vw;
+}
