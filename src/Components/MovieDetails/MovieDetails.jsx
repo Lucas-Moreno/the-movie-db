@@ -82,28 +82,32 @@ const MovieDetails = (routerProps) => {
 			<div className="movieDetails__similars">
 				{width >= 768
 					? similarMovies.slice(0, 5).map((similarMovie) => (
-							<div className="movieDetails__similar">
-								<img
-									className="movieDetails__similar__cover"
-									src={imgSimilar + similarMovie.poster_path}
-									alt="Affiche du film"
-								/>
-								<p className="movieDetails__similar__title">
-									{similarMovie.original_title}
-								</p>
-							</div>
+							<Link to={"/movie/" + similarMovie.id} key={similarMovie.id}>
+								<div className="movieDetails__similar">
+									<img
+										className="movieDetails__similar__cover"
+										src={imgSimilar + similarMovie.poster_path}
+										alt="Affiche du film"
+									/>
+									<p className="movieDetails__similar__title">
+										{similarMovie.original_title}
+									</p>
+								</div>
+							</Link>
 					  ))
 					: similarMovies.slice(0, 4).map((similarMovie) => (
-							<div className="movieDetails__similar">
-								<img
-									className="movieDetails__similar__cover"
-									src={imgSimilar + similarMovie.poster_path}
-									alt="Affiche du film"
-								/>
-								<p className="movieDetails__similar__title">
-									{similarMovie.original_title}
-								</p>
-							</div>
+							<Link to={"/movie/" + similarMovie.id} key={similarMovie.id}>
+								<div className="movieDetails__similar">
+									<img
+										className="movieDetails__similar__cover"
+										src={imgSimilar + similarMovie.poster_path}
+										alt="Affiche du film"
+									/>
+									<p className="movieDetails__similar__title">
+										{similarMovie.original_title}
+									</p>
+								</div>
+							</Link>
 					  ))}
 			</div>
 		</div>
