@@ -12,6 +12,7 @@ const CardGenre = (props) => {
     color: 'white',
     borderRadius: '5px',
   };
+
   return (
     <div style={card}>
       <p>{props.name}</p>
