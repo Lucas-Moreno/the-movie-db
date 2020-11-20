@@ -5,9 +5,10 @@
   &__header {
     font-size: 24px;
     text-align: center;
-    padding-top: 3vw;
+    padding-top: 8vw;
     @media screen and (min-width: 768px) {
       text-align: left;
+      padding-top: 3vw;
     }
     &--title {
       padding-bottom: 4vw;
@@ -17,7 +18,10 @@
   &__sliderContainer {
     display: flex;
     flex-direction: column;
-    padding-top: 8em;
+    padding-top: 6em;
+    @media screen and (min-width: 768px) {
+      padding-top: 8em;
+    }
     & span {
       display: flex;
       flex-direction: row;
