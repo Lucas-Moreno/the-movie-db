@@ -18,15 +18,15 @@ const Movie = () => {
         </span>
         <div className='home__sliderContainer'>
           <span>
-            <p className='home__sliderContainer--title'>Les films populaires</p>
-            <Link to="/movies/popular" className='home__sliderContainer--viewAll'>Tout voir</Link>
+            <p className='home__sliderContainer--title'>Films du moment</p>
+            <p className='home__sliderContainer--viewAll'>Tout voir</p>
           </span>
           <MostTrendedMovies />
         </div>
         <div className='home__sliderContainer'>
           <span>
-            <p className='home__sliderContainer--title'>Les films les mieux notés</p>
-            <Link to="/movies/top_rated" className='home__sliderContainer--viewAll'>Tout voir</Link>
+            <p className='home__sliderContainer--title'>Films les mieux notés</p>
+            <p className='home__sliderContainer--viewAll'>Tout voir</p>
           </span>
           <MostViewedMovies />
         </div>
