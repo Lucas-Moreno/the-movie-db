@@ -15,11 +15,11 @@
   width: 100vw;
   height: 40vh;
   overflow: hidden;
-  z-index: -1;
 }
 .movieDetails__cover__content {
   width: 100vw;
   position: absolute;
+
   z-index: -1;
 }
 
@@ -67,8 +67,19 @@
   width: 85vw;
 }
 
+.similar {
+  padding-top: 4em;
+}
+
+.movieDetails__similars {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
 .movieDetails__similar {
   display: flex;
+  flex-direction: column;
   margin-top: 4vh;
   justify-content: space-evenly;
 }
@@ -91,7 +102,7 @@
     font-size: 11px;
     width: 98px;
   }
-  
+
   .movieDetails__similar__cover {
     width: 100px;
   }
@@ -109,7 +120,7 @@
     font-size: 11px;
     width: 128px;
   }
-  
+
   .movieDetails__similar__cover {
     width: 130px;
   }

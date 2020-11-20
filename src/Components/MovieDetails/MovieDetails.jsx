@@ -68,12 +68,13 @@ const MovieDetails = (routerProps) => {
           <img className='movieDetails__cover__content' src={img} />
         </div>
       </div>
-      <div>
+      <h1 className='similar'>Films similaires</h1>
+      <div className='movieDetails__similars'>
         {similarMovies.slice(0, 4).map((similarMovie) => (
           <div className='movieDetails__similar'>
             <p className='movieDetails__similar__title'>{similarMovie.original_title}</p>
             <img
-              className='movieDetails__similar__'
+              className='movieDetails__similar__cover'
               src={imgSimilar + similarMovie.poster_path}
               alt='Affiche du film'
             />
