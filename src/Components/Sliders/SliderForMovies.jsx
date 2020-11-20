@@ -7,13 +7,9 @@ const Slider = ({ resultsOfRequest }) => {
   const [width, setWidth] = useState();
 
   useEffect(() => {
-    function windowResize() {
-      setWidth(window.innerWidth);
-    }
-    window.addEventListener('resize', windowResize);
-    return () => {
-      window.removeEventListener('resize', windowResize);
-    };
+    setWidth(window.innerWidth);
+    window.addEventListener('resize', () => setWidth(window.innerWidth));
+    return window.removeEventListener('resize', setWidth(window.innerWidth));
   }, []);
 
   const slideRight = () => {

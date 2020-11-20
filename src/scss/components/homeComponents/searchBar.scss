@@ -1,8 +1,7 @@
 .searchbar {
   text-align: center;
   &--input {
-    border: transparent;
-    border: 2px solid $dark-grey;
+    border: 1px solid $primary-blue;
     border-radius: 20px;
     background-image: url('../../../assets/icons/loupe.svg');
     background-repeat: no-repeat;
