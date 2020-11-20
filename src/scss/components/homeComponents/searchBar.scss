@@ -1,11 +1,15 @@
 .searchbar {
+  text-align: left;
   &--input {
-    border: 1px solid $primary-blue;
+    border: transparent;
     border-radius: 20px;
-    background-image: url('../../../assets/icons/loupe.svg');
+    background-image: url(/static/media/loupe.0979867c.svg);
     background-repeat: no-repeat;
     padding-left: 20px;
-    padding: 4px;
+    padding: 10px;
+    width: 30vw;
+    background-color: #1C232A;
+    background-position: 97% 50%;
     &:focus {
       outline: none;
       background-image: none;
@@ -17,4 +21,10 @@
     background-color: $dark-background;
     width: 100%;
   }
+}
+
+@media screen and (max-width: 880px) {
+.searchbar--input {
+  width: 80vw;
+}
 }

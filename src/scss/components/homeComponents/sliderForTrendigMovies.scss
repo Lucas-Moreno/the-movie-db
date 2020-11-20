@@ -2,6 +2,7 @@
   width: 100%;
   display: flex;
   align-items: center;
+  justify-content: center;
   & button {
     background: none;
     border: none;
@@ -22,8 +23,8 @@
       margin: 0 2%;
       font-size: 11px;
       &--image {
-        width: 60px;
-        height: 100px;
+        width: 260px;
+        height: 400px;
         object-fit: cover;
       }
       &--title {
@@ -39,3 +40,18 @@
     }
   }
 }
+
+@media screen and (max-width: 1355px) {
+  .containerTrendingMovies__slider--card--image {
+    width: 200px;
+    height: 300px;
+}
+
+}
+@media screen and (max-width: 880px) {
+  .containerTrendingMovies__slider--card--image{
+    width: 100px;
+    height: 160px;
+  }
+}
+
