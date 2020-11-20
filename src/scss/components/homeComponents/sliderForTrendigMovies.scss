@@ -18,40 +18,48 @@
     align-items: center;
     width: 100%;
     &--card {
-      width: 50%;
-      height: 20%;
       margin: 0 2%;
       font-size: 11px;
+      opacity: 0.8;
+      &:hover {
+        transition: transform ease-in-out 0.3s;
+        transform: scale(1.08);
+        opacity: 1;
+      }
       &--image {
-        width: 260px;
-        height: 400px;
+        width: 50px;
+        height: 100%;
         object-fit: cover;
       }
       &--title {
         font-weight: 600;
-        width: 60px;
         height: 10px;
-        overflow: hidden;
       }
       &--date {
         font-weight: 200;
         font-size: 9px;
+        padding-top: 16px;
       }
     }
   }
 }
 
-@media screen and (max-width: 1355px) {
+// @media screen and (max-width: 1355px) {
+//   .containerTrendingMovies__slider--card--image {
+//     width: 150px;
+//     height: 300px;
+//   }
+// }
+@media screen and (min-width: 768px) {
+  .containerTrendingMovies__slider--card {
+    margin: 0 6px;
+    font-size: 16px;
+  }
+  .containerTrendingMovies__slider--card--date {
+    padding-top: 8px;
+    font-size: 16px;
+  }
   .containerTrendingMovies__slider--card--image {
-    width: 200px;
-    height: 300px;
-}
-
-}
-@media screen and (max-width: 880px) {
-  .containerTrendingMovies__slider--card--image{
-    width: 100px;
-    height: 160px;
+    width: 170px;
   }
 }
-

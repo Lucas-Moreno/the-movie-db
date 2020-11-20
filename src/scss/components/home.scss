@@ -9,19 +9,18 @@
     padding-top: 3vw;
     &--title {
       padding-bottom: 4vw;
-      text-align: left;
       font-size: 42px;
     }
   }
   &__sliderContainer {
     display: flex;
     flex-direction: column;
+    padding-top: 8em;
     & span {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      padding-top: 3vw;
-      padding-bottom: 3vw;
+      padding-bottom: 2em;
     }
     &--title {
       font-size: 22px;

@@ -22,7 +22,7 @@ const SearchBar = () => {
         .then((res) => {
           const mostViewedThreadResults = res.data.results;
           // mostViewedThreadResults.filter((result) => console.log(result));
-          mostViewedThreadResults.sort(function (a, b) {
+          mostViewedThreadResults.sort(function(a, b) {
             const textA = a.title.toUpperCase();
             const textB = b.title.toUpperCase();
             return textA < textB ? -1 : textA > textB ? 1 : 0;
@@ -35,8 +35,14 @@ const SearchBar = () => {
 
   return (
     <div className='searchbar'>
-      <input type='text' value={searchTerm} onChange={handleChange} className='searchbar--input' />
-      <div className='searchbar--yo'>
+      <input
+        type='text'
+        value={searchTerm}
+        onChange={handleChange}
+        className='searchbar--input'
+        placeholder='Game Of Thones..'
+      />
+      <div className='searchbar--listOfSearch'>
         {searchTerm && <CardSearch result={searchResults} className='searchbar--search' />}
       </div>
     </div>
