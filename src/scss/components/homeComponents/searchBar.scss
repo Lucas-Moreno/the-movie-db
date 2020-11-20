@@ -1,14 +1,15 @@
 .searchbar {
-  text-align: left;
+  text-align: center;
   &--input {
     border: transparent;
+    border: 2px solid $primary-blue;
     border-radius: 20px;
-    background-image: url(/static/media/loupe.0979867c.svg);
+    background-image: url('../../../assets/icons/loupe.svg');
     background-repeat: no-repeat;
     padding-left: 20px;
     padding: 10px;
     width: 30vw;
-    background-color: #1C232A;
+    background-color: $white;
     background-position: 97% 50%;
     &:focus {
       outline: none;
@@ -16,15 +17,14 @@
     }
   }
   &--yo {
-    z-index: 10;
     position: absolute;
     background-color: $dark-background;
     width: 100%;
   }
 }
 
-@media screen and (max-width: 880px) {
-.searchbar--input {
-  width: 80vw;
-}
+@media screen and (max-width: 768px) {
+  .searchbar--input {
+    width: 80vw;
+  }
 }
