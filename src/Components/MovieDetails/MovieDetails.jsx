@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from "react-router-dom"
 import axios from "axios";
+import '../../scss/style.scss';
 
 
 const MovieDetails = (routerProps) => {
@@ -28,20 +29,17 @@ const MovieDetails = (routerProps) => {
   return (
     <div>
       <Link to="/movie">
-        <button>Retourner à la home</button>
+        <button>Movie</button>
       </Link>
-      <h1>Page Movie details</h1>
-      <p>Information en fonction de l'id numéro : {id}</p>
-      <br />
       <div>
-        <p>Titre du film : {movies.original_title}</p>
-        <p>Synopsis du film : {movies.overview ? movies.overview : "Pas de synopsis"}</p>
-        <p>Lien du film : {movies.homepage ? movies.homepage : "Pas de lien"}</p>
-        <p>Note du film : {movies.vote_average}</p>
-        <p>Nombres de votes : {movies.vote_count}</p>
-        <div>
-          <p>Image :</p>
-          <img src={img} />
+        <p className="movieDetails__title">{movies.original_title}</p>
+        <p className="movieDetails__score">{movies.vote_average}</p>
+        <span className="movieDetails__vote">({movies.vote_count}) votants</span>
+        <a className="movieDetails__link" href={movies.homepage}>Voir le site officiel</a>
+        <p className="movieDetails__synopsis">Synopsis</p>
+        <p className="movieDetails__content">{movies.overview ? movies.overview : "Pas de synopsis"}</p>
+        <div className="movieDetails__cover">
+          <img className="movieDetails__cover__content" src={img} />
         </div>
       </div>
     </div>
