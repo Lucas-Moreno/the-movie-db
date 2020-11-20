@@ -3,6 +3,7 @@
   top: 5vh;
   left: 6vw;
   transition: left 0.5s, transform 0.5s;
+  z-index: 1;
   &:hover {
     transform: translateX(-4px);
   }
@@ -15,12 +16,12 @@
   width: 100vw;
   height: 40vh;
   overflow: hidden;
+  z-index: -1;
 }
+
 .movieDetails__cover__content {
   width: 100vw;
   position: absolute;
-
-  z-index: -1;
 }
 
 .movieDetails__title {
