@@ -69,7 +69,9 @@ const Slider = ({ resultsOfRequest }) => {
                       alt='Image'
                       className='container__slider--card--image'
                     />
-                    <h1 className='container__slider--card--title'>{result.title.slice(0, 8)}</h1>
+                    <h1 className='container__slider--card--title'>
+                      {result.original_title.slice(0, 8)}
+                    </h1>
                     <p className='container__slider--card--date'>{result.release_date}</p>
                   </div>
                 </Link>
