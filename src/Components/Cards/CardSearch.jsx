@@ -7,7 +7,7 @@ const CardSearch = ({ result }) => {
   const img = `https://image.tmdb.org/t/p/w500`;
 
   return result.slice(0, 4).map((item) => (
-    <Link to={'/movie/' + item.id} key={item.id}>
+    <Link to={'/movie/' + item.id} key={item.id} className='cardSearch'>
       <li className='cardSearch'>
         <img src={img + item.poster_path} alt='' />
         <h1>{item.title}</h1>

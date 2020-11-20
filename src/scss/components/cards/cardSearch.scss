@@ -4,7 +4,11 @@
   align-items: center;
   padding: 0.8em;
   max-height: 80px;
-  z-index: 10;
+  width: 100%;
+  &:hover {
+    transition: transform ease-in-out 0.2s;
+    transform: scale(1.01);
+  }
   & img {
     width: 20px;
     height: 20px;

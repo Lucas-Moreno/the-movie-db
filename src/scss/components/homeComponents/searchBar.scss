@@ -21,6 +21,9 @@
     background-color: $dark-background;
     width: 100%;
   }
+  &--search:hover {
+    background-color: beige;
+  }
 }
 
 @media screen and (max-width: 768px) {
