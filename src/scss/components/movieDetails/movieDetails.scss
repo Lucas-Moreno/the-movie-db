@@ -1,7 +1,7 @@
 .movieDetails__return {
   position: absolute;
   top: 5vh;
-  left:6vw;
+  left: 6vw;
 }
 
 .movieDetails__cover {
@@ -15,7 +15,6 @@
 .movieDetails__cover__content {
   width: 100vw;
   position: absolute;
-
   z-index: -1;
 }
 
@@ -39,10 +38,14 @@
   margin-top: 2vh;
   font-size: 14px;
   color: $primary-blue;
+  transition: right 1s, transform 1s;
+  &:hover {
+    transform: translateX(10px);
+  }
 }
 
-.movieDetails__link:after{
-  content : "\002794";
+.movieDetails__link:after {
+  content: '\002794';
   margin-left: 8px;
 }
 
@@ -79,6 +82,20 @@
     height: 120vh;
   }
   .movieDetails__return {
-    left:5vw;
+    left: 5vw;
   }
 }
+
+// .movieDetails__link {
+//   transition: right 1s, transform 1s;
+//   & span {
+//     background-color: lawngreen;
+//   }
+//   &--h {
+//     transition: right 1s, transform 1s;
+
+//     &:hover {
+//       transform: translateX(10px);
+//     }
+//   }
+// }
